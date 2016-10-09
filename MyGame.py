@@ -8,7 +8,7 @@ class Kirby:
         self.imagey = 0
         self.charsize = 70
         self.frame = 0
-        self.power = 1
+        self.power = 2
         self.image = load_image('kirby.png')
     def update(self):
         self.frame = (self.frame + 1) % self.imagenum
