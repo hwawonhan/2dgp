@@ -9,7 +9,10 @@ name = "MainState"
 
 kirby = None
 sky = None
-coins = None
+coin1 = None
+coin2 = None
+coin3 = None
+coin4 = None
 running = True
 
 class Kirby:
@@ -25,9 +28,11 @@ class Kirby:
     def update(self):
         self.frame = (self.frame + 1) % self.imagenum
         if self.keydown == 1:
-            self.y += 10
+            if self.y <= 530:
+                self.y += 10
         elif self.keydown == 2:
-            self.y -= 10
+            if self.y >= 70:
+                self.y -= 10
         elif self.keydown == 3:
             if self.power == 1:
                 self.imagey = 3
@@ -43,18 +48,84 @@ class Kirby:
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
 
-class Coin:
+class Coin1:
     def __init__(self):
-        self.x, self.y = 800, random.randint(50, 550)
-        self.image = load_image('image//coin.png')
-        self.imagey = 0
+        self.position = []
+        for i in range(8):
+            if i < 4:
+                self.position.append((800 + (i * 50), 300 + (50 * i)))
+            else:
+                self.position.append((800 + (i * 50), self.position[3][1] - (50 * (i-4))))
+        self.moveX = 0
+        self.image = load_image('image//coin_1.png')
+        self.imagex = 0
     def update(self):
-        self.x -= 10
-        self.imagey = (self.imagey + 1) % 3
+        self.moveX += 10
+        self.imagex = (self.imagex + 1) % 7
     def draw(self):
-        self.image.clip_draw(0, (self.imagey * 70) + 2, 70, 68, self.x, self.y)
+        for i in range(8):
+            self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
 
+class Coin2:
+    def __init__(self):
+        self.position = []
+        for i in range(8):
+            if i < 4:
+                self.position.append((1200 + (i * 50), 300 - (50 * i)))
+            else:
+                self.position.append((1200 + (i * 50), self.position[3][1] + (50 * (i-4))))
+        self.moveX = 0
+        self.image = load_image('image//coin_1.png')
+        self.imagex = 0
+    def update(self):
+        self.moveX += 10
+        self.imagex = (self.imagex + 1) % 7
+    def draw(self):
+        for i in range(8):
+            self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
 
+class Coin3:
+    def __init__(self):
+        self.position = []
+        for i in range(8):
+            if i < 4:
+                self.position.append((1600 + (i * 50), 300 + (50 * i)))
+                self.position.append((1600 + (i * 50), 300 - (50 * i)))
+            else:
+                self.position.append((1600 + (i * 50), 500 - (50 * (i-3))))
+                self.position.append((1600 + (i * 50), 100 + (50 * (i-3))))
+        self.moveX = 0
+        self.image = load_image('image//coin_1.png')
+        self.imagex = 0
+    def update(self):
+        self.moveX += 10
+        self.imagex = (self.imagex + 1) % 7
+    def draw(self):
+        for i in range(16):
+            self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
+
+class Coin4:
+    def __init__(self):
+        self.position = []
+        for i in range(8):
+            if i < 4:
+                self.position.append((2000 + (i * 50), 300 + (50 * i)))
+                self.position.append((2000 + (i * 50), 300 - (50 * i)))
+            else:
+                self.position.append((2000 + (i * 50), 500 - (50 * (i - 3))))
+                self.position.append((2000 + (i * 50), 100 + (50 * (i - 3))))
+            if i != 0 and i != 7:
+                self.position.append((2000 + (i * 50), 300))
+
+        self.moveX = 0
+        self.image = load_image('image//coin_1.png')
+        self.imagex = 0
+    def update(self):
+        self.moveX += 10
+        self.imagex = (self.imagex + 1) % 7
+    def draw(self):
+        for i in range(22):
+            self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
 
 class Sky:
     def __init__(self):
@@ -84,16 +155,23 @@ class Monster:
 
 
 def enter():
-    global kirby, sky, coins
+    global kirby, sky, coin1, coin2, coin3, coin4
     kirby = Kirby()
     sky = Sky()
-    coins = Coin()
+    coin1 = Coin1()
+    coin2 = Coin2()
+    coin3 = Coin3()
+    coin4 = Coin4()
+
 
 def exit():
-    global kirby, sky, coins
+    global kirby, sky, coin1, coin2, coin3, coin4
     del(kirby)
     del(sky)
-    del(coins)
+    del(coin1)
+    del(coin2)
+    del(coin3)
+    del(coin4)
 
 
 def pause():
@@ -137,14 +215,20 @@ def handle_events():
 def update():
     kirby.update()
     sky.update()
-    coins.update()
+    coin1.update()
+    coin2.update()
+    coin3.update()
+    coin4.update()
     delay(0.07)
 
 def draw():
     clear_canvas()
     sky.draw()
+    coin1.draw()
+    coin2.draw()
+    coin3.draw()
+    coin4.draw()
     kirby.draw()
-    coins.draw()
     update_canvas()
 
 
