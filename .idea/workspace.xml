@@ -23,8 +23,8 @@
       <file leaf-file-name="main_state.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_state.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3120">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="214">
+              <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -47,7 +47,7 @@
       <file leaf-file-name="game_framework.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/game_framework.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
+            <state relative-caret-position="2112">
               <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
@@ -57,7 +57,7 @@
       <file leaf-file-name="Mygame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mygame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
+            <state relative-caret-position="48">
               <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
@@ -92,6 +92,7 @@
         <option value="$PROJECT_DIR$/Cointype3.py" />
         <option value="$PROJECT_DIR$/CoinType4.py" />
         <option value="$PROJECT_DIR$/Sky.py" />
+        <option value="$PROJECT_DIR$/ex.py" />
         <option value="$PROJECT_DIR$/main_state.py" />
       </list>
     </option>
@@ -162,6 +163,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="2015180045" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_state.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="ex" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="2015180045" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ex.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -300,14 +318,16 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.MyGame" />
       <item index="1" class="java.lang.String" itemvalue="Python.main_state" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ex" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.MyGame" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main_state" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ex" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main_state" />
       </list>
     </recent_temporary>
   </component>
@@ -385,6 +405,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2112">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2112">
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Mygame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/game_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1152">
           <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
@@ -395,9 +491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -443,9 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -491,9 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -539,9 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -636,9 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -662,7 +743,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
+        <state relative-caret-position="2112">
           <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
@@ -670,7 +751,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Mygame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="48">
           <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
@@ -678,58 +759,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CKirby.py">
+    <entry file="file://$PROJECT_DIR$/CKirby.py" />
+    <entry file="file://$PROJECT_DIR$/Cointype1.py" />
+    <entry file="file://$PROJECT_DIR$/Cointype2.py" />
+    <entry file="file://$PROJECT_DIR$/Cointype3.py" />
+    <entry file="file://$PROJECT_DIR$/CoinType4.py" />
+    <entry file="file://$PROJECT_DIR$/Sky.py" />
+    <entry file="file://$PROJECT_DIR$/ex.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="31" column="115" selection-start-line="31" selection-start-column="115" selection-end-line="31" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cointype1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cointype2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Cointype3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CoinType4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sky.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="96">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3120">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="214">
+          <caret line="60" column="49" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
