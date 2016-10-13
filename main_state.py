@@ -92,8 +92,29 @@ class Coin1:
         for i in range(8):
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
+                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 class Coin2:
+
+
+    def coilsion(self):
+        for i in range(8):
+            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
+                0] - self.moveX + 25, \
+                                               self.position[i][1] + 25, self.position[i][1] - 25
+            print(left_a, right_a, top_a, bottom_a)
+
+            if left_b < right_a and left_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+            elif right_b < right_a and right_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+
     def __init__(self):
         self.position = []
         for i in range(8):
@@ -107,14 +128,37 @@ class Coin2:
     def update(self):
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
+        self.coilsion()
 
     def draw(self):
         for i in range(8):
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
+                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 
 class Coin3:
+
+
+    def coilsion(self):
+        for i in range(16):
+            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
+                0] - self.moveX + 25, \
+                                               self.position[i][1] + 25, self.position[i][1] - 25
+            print(left_a, right_a, top_a, bottom_a)
+
+            if left_b < right_a and left_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+            elif right_b < right_a and right_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+
+
     def __init__(self):
         self.position = []
         for i in range(8):
@@ -130,13 +174,34 @@ class Coin3:
     def update(self):
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
+        self.coilsion()
     def draw(self):
         for i in range(16):
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
+                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 
 class Coin4:
+
+    def coilsion(self):
+        for i in range(22):
+            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
+                0] - self.moveX + 25, \
+                                               self.position[i][1] + 25, self.position[i][1] - 25
+            print(left_a, right_a, top_a, bottom_a)
+
+            if left_b < right_a and left_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+            elif right_b < right_a and right_b > left_a:
+                if top_b < top_a and top_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+                if bottom_b < top_a and bottom_b > bottom_a:
+                    self.position[i] = (self.position[i][0], self.position[i][1], True)
+
     def __init__(self):
         self.position = []
         for i in range(8):
@@ -155,11 +220,12 @@ class Coin4:
     def update(self):
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
+        self.coilsion()
     def draw(self):
         for i in range(22):
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
+                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 
 class Sky:
     def __init__(self):
