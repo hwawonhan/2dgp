@@ -13,8 +13,7 @@ coin2 = None
 coin3 = None
 coin4 = None
 running = True
-
-
+front = None
 
 
 class Kirby:
@@ -49,16 +48,15 @@ class Kirby:
 
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
-        draw_rectangle(self.x - 35, self.y - 35, self.x + 35, self.y + 35)
+        #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
 class Coin1:
     global kirby
 
     def coilsion(self):
         for i in range(8):
-            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_a, right_a, top_a, bottom_a = kirby.x - 30, kirby.x + 30, kirby.y + 30, kirby.y - 25
             left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][0] - self.moveX + 25,\
                                                self.position[i][1] + 25, self.position[i][1] - 25
-            print(left_a, right_a, top_a, bottom_a)
 
             if left_b < right_a and left_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
@@ -98,11 +96,9 @@ class Coin2:
 
     def coilsion(self):
         for i in range(8):
-            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_a, right_a, top_a, bottom_a = kirby.x - 30, kirby.x + 30, kirby.y + 30, kirby.y - 25
             left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
-                0] - self.moveX + 25, \
-                                               self.position[i][1] + 25, self.position[i][1] - 25
-            print(left_a, right_a, top_a, bottom_a)
+                0] - self.moveX + 25, self.position[i][1] + 25, self.position[i][1] - 25
 
             if left_b < right_a and left_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
@@ -141,11 +137,10 @@ class Coin3:
 
     def coilsion(self):
         for i in range(16):
-            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_a, right_a, top_a, bottom_a = kirby.x - 30, kirby.x + 30, kirby.y + 30, kirby.y - 25
             left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
                 0] - self.moveX + 25, \
                                                self.position[i][1] + 25, self.position[i][1] - 25
-            print(left_a, right_a, top_a, bottom_a)
 
             if left_b < right_a and left_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
@@ -185,11 +180,10 @@ class Coin4:
 
     def coilsion(self):
         for i in range(22):
-            left_a, right_a, top_a, bottom_a = kirby.x - 35, kirby.x + 35, kirby.y + 35, kirby.y - 35
+            left_a, right_a, top_a, bottom_a = kirby.x - 30, kirby.x + 30, kirby.y + 30, kirby.y - 25
             left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][
                 0] - self.moveX + 25, \
                                                self.position[i][1] + 25, self.position[i][1] - 25
-            print(left_a, right_a, top_a, bottom_a)
 
             if left_b < right_a and left_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
@@ -225,7 +219,6 @@ class Coin4:
         for i in range(22):
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 
 class Sky:
     def __init__(self):
@@ -313,15 +306,59 @@ def handle_events():
                 kirby.imagenum = 8
 
 def update():
-    global coin1
+    global coin1, coin2, coin3, coin4
+    j = 0
     kirby.update()
     sky.update()
     coin1.update()
     coin2.update()
     coin3.update()
     coin4.update()
+    if coin1.position[0][0] - coin1.moveX < -790:
+        coin1.moveX = 0
+        for i in range(8):
+            if i < 4:
+                coin1.position[i] = ((800 + (i * 50), 300 + (50 * i), False))
+            else:
+                coin1.position[i] = ((800 + (i * 50), coin1.position[3][1] - (50 * (i - 4)), False))
 
+    if coin2.position[0][0] - coin2.moveX < -790:
+        coin2.moveX = 0
+        for i in range(8):
+            if i < 4:
+                coin2.position[i] = ((800 + (i * 50), 300 - (50 * i), False))
+            else:
+                coin2.position[i] = ((800 + (i * 50), coin2.position[3][1] + (50 * (i - 4)), False))
 
+    if coin3.position[0][0] - coin3.moveX < -790:
+        coin3.moveX = 0
+        j = 0
+        for i in range(8):
+            if i < 4:
+                coin3.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
+                j = j + 1
+                coin3.position[i + j] = ((800 + (i * 50), 300 - (50 * i), False))
+            else:
+                coin3.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
+                j = j + 1
+                coin3.position[i + j] = ((800 + (i * 50), 100 + (50 * (i - 3)), False))
+
+    if coin4.position[0][0] - coin4.moveX < -790:
+        coin4.moveX = 0
+        j = 0
+        for i in range(8):
+            if i < 4:
+                coin4.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
+                j = j + 1
+                coin4.position[i + j] = ((800 + (j * 50), 300 - (50 * j), False))
+            else:
+                coin4.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
+                j = j + 1
+                coin4.position[i + j] = ((800 + (j * 50), 100 + (50 * (j - 3)), False))
+        for i in range(8):
+            if i != 0 and i != 7:
+                coin4.position[i + 14] = (800 + (i * 50), 300, False)
+        coin4.position[7] = (coin4.position[7][0], coin4.position[7][1] + 50, False)
     delay(0.07)
 
 def draw():
