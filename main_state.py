@@ -25,6 +25,7 @@ class Kirby:
         self.charsize = 70
         self.frame = 0
         self.power = 2
+        self.bullet = []
         self.image = load_image('image//kirby.png')
     def update(self):
         self.frame = (self.frame + 1) % self.imagenum
@@ -49,6 +50,7 @@ class Kirby:
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
+
 class Coin1:
     global kirby
 
@@ -297,6 +299,7 @@ def handle_events():
             elif event.key == SDLK_SPACE:
                 kirby.frame = 0
                 kirby.keydown = 3
+                kirby.bullet.append((kirby.x, kirby.y, False))
 
 
         if event.type == SDL_KEYUP:
