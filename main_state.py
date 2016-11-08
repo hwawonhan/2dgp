@@ -47,6 +47,32 @@ class Kirby:
             self.imagey = 0
             self.frame = 0
 
+    def handle_event(self, event):
+        if event.type == SDL_KEYDOWN:
+            if event.key == SDLK_UP:
+                self.frame = 0
+                self.keydown = 1
+                self.imagey = 1
+                self.imagenum = 5
+            elif event.key == SDLK_DOWN:
+                self.frame = 0
+                self.keydown = 2
+                self.imagey = 2
+                self.imagenum = 5
+            elif event.key == SDLK_SPACE:
+                self.frame = 0
+                self.keydown = 3
+                self.bullet.append((self.x, self.y, False))
+
+
+        if event.type == SDL_KEYUP:
+            #if(kirby.keydown == 1 or kirby.keydown == 2):
+                kirby.keydown = 0
+                kirby.imagey = 0
+                kirby.imagenum = 8
+
+
+
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
@@ -285,28 +311,8 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_state(title_state)
-        elif event.type == SDL_KEYDOWN:
-            if event.key == SDLK_UP:
-                kirby.frame = 0
-                kirby.keydown = 1
-                kirby.imagey = 1
-                kirby.imagenum = 5
-            elif event.key == SDLK_DOWN:
-                kirby.frame = 0
-                kirby.keydown = 2
-                kirby.imagey = 2
-                kirby.imagenum = 5
-            elif event.key == SDLK_SPACE:
-                kirby.frame = 0
-                kirby.keydown = 3
-                kirby.bullet.append((kirby.x, kirby.y, False))
-
-
-        if event.type == SDL_KEYUP:
-            #if(kirby.keydown == 1 or kirby.keydown == 2):
-                kirby.keydown = 0
-                kirby.imagey = 0
-                kirby.imagenum = 8
+        else:
+            kirby.handle_event(event)
 
 def update():
     global coin1, coin2, coin3, coin4
