@@ -14,9 +14,16 @@ coin3 = None
 coin4 = None
 running = True
 front = None
-
+current_time = get_time()
 
 class Kirby:
+    PIXEL_PER_METER = (10.0 / 0.3)
+    RUN_SPEED_KMPH = 20.0
+    RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
+    RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
+    RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
+
+
     def __init__(self):
         self.x, self.y = 100, 300
         self.keydown = 0
@@ -24,17 +31,19 @@ class Kirby:
         self.imagey = 0
         self.charsize = 70
         self.frame = 0
+        self.Speed_PPS = 100
         self.power = 2
         self.bullet = []
         self.image = load_image('image//kirby.png')
-    def update(self):
+    def update(self, frame_time):
+        distance = self.Speed_PPS * frame_time
         self.frame = (self.frame + 1) % self.imagenum
         if self.keydown == 1:
             if self.y <= 530:
-                self.y += 10
+                self.y += distance
         elif self.keydown == 2:
             if self.y >= 70:
-                self.y -= 10
+                self.y -= distance
         elif self.keydown == 3:
             if self.power == 1:
                 self.imagey = 3
@@ -111,8 +120,13 @@ class Coin1:
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
         self.coilsion()
-
-
+        if self.position[0][0] - self.moveX < -790:
+            self.moveX = 0
+            for i in range(8):
+                if i < 4:
+                    self.position[i] = ((800 + (i * 50), 300 + (50 * i), False))
+                else:
+                    self.position[i] = ((800 + (i * 50), self.position[3][1] - (50 * (i - 4)), False))
 
     def draw(self):
         for i in range(8):
@@ -153,6 +167,14 @@ class Coin2:
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
         self.coilsion()
+
+        if self.position[0][0] - self.moveX < -790:
+            self.moveX = 0
+            for i in range(8):
+                if i < 4:
+                    self.position[i] = ((800 + (i * 50), 300 - (50 * i), False))
+                else:
+                    self.position[i] = ((800 + (i * 50), self.position[3][1] + (50 * (i - 4)), False))
 
     def draw(self):
         for i in range(8):
@@ -198,6 +220,20 @@ class Coin3:
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
         self.coilsion()
+
+        if self.position[0][0] - self.moveX < -790:
+            self.moveX = 0
+            j = 0
+            for i in range(8):
+                if i < 4:
+                    self.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
+                    j = j + 1
+                    self.position[i + j] = ((800 + (i * 50), 300 - (50 * i), False))
+                else:
+                    self.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
+                    j = j + 1
+                    self.position[i + j] = ((800 + (i * 50), 100 + (50 * (i - 3)), False))
+
     def draw(self):
         for i in range(16):
             if self.position[i][2] == False:
@@ -243,6 +279,23 @@ class Coin4:
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
         self.coilsion()
+        if self.position[0][0] - self.moveX < -790:
+            self.moveX = 0
+            j = 0
+            for i in range(8):
+                if i < 4:
+                    self.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
+                    j = j + 1
+                    self.position[i + j] = ((800 + (j * 50), 300 - (50 * j), False))
+                else:
+                    self.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
+                    j = j + 1
+                    self.position[i + j] = ((800 + (j * 50), 100 + (50 * (j - 3)), False))
+            for i in range(8):
+                if i != 0 and i != 7:
+                    self.position[i + 14] = (800 + (i * 50), 300, False)
+            self.position[7] = (self.position[7][0], self.position[7][1] + 50, False)
+
     def draw(self):
         for i in range(22):
             if self.position[i][2] == False:
@@ -255,7 +308,7 @@ class Sky:
         self.x, self.y = 400, 300
         self.x2 = 1200
         self.endBG = 0
-
+        self.Speed_PPS = 100
     def update(self):
         self.x -= 10
         self.x2 -= 10
@@ -315,59 +368,20 @@ def handle_events():
             kirby.handle_event(event)
 
 def update():
-    global coin1, coin2, coin3, coin4
+    global coin1, coin2, coin3, coin4, current_time
     j = 0
-    kirby.update()
+    frame_time = get_time() - current_time
+    frame_rate = 1.0 / frame_time
+    current_time += frame_time
+    kirby.update(frame_time)
     sky.update()
     coin1.update()
     coin2.update()
     coin3.update()
     coin4.update()
-    if coin1.position[0][0] - coin1.moveX < -790:
-        coin1.moveX = 0
-        for i in range(8):
-            if i < 4:
-                coin1.position[i] = ((800 + (i * 50), 300 + (50 * i), False))
-            else:
-                coin1.position[i] = ((800 + (i * 50), coin1.position[3][1] - (50 * (i - 4)), False))
 
-    if coin2.position[0][0] - coin2.moveX < -790:
-        coin2.moveX = 0
-        for i in range(8):
-            if i < 4:
-                coin2.position[i] = ((800 + (i * 50), 300 - (50 * i), False))
-            else:
-                coin2.position[i] = ((800 + (i * 50), coin2.position[3][1] + (50 * (i - 4)), False))
 
-    if coin3.position[0][0] - coin3.moveX < -790:
-        coin3.moveX = 0
-        j = 0
-        for i in range(8):
-            if i < 4:
-                coin3.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
-                j = j + 1
-                coin3.position[i + j] = ((800 + (i * 50), 300 - (50 * i), False))
-            else:
-                coin3.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
-                j = j + 1
-                coin3.position[i + j] = ((800 + (i * 50), 100 + (50 * (i - 3)), False))
 
-    if coin4.position[0][0] - coin4.moveX < -790:
-        coin4.moveX = 0
-        j = 0
-        for i in range(8):
-            if i < 4:
-                coin4.position[i + j] = ((800 + (i * 50), 300 + (50 * i), False))
-                j = j + 1
-                coin4.position[i + j] = ((800 + (j * 50), 300 - (50 * j), False))
-            else:
-                coin4.position[i + j] = ((800 + (i * 50), 500 - (50 * (i - 3)), False))
-                j = j + 1
-                coin4.position[i + j] = ((800 + (j * 50), 100 + (50 * (j - 3)), False))
-        for i in range(8):
-            if i != 0 and i != 7:
-                coin4.position[i + 14] = (800 + (i * 50), 300, False)
-        coin4.position[7] = (coin4.position[7][0], coin4.position[7][1] + 50, False)
     delay(0.07)
 
 def draw():
