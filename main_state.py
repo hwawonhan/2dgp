@@ -1,13 +1,18 @@
 import random
 import json
 import os
+
 from pico2d import*
+from Kirby import Kirby
+from Coin1 import Coin1
+from Sky import Sky
 import game_framework
 import title_state
 name = "MainState"
 
-kirby = None
+
 sky = None
+kirby = None
 coin1 = None
 coin2 = None
 coin3 = None
@@ -16,123 +21,7 @@ running = True
 front = None
 current_time = get_time()
 
-class Kirby:
-    PIXEL_PER_METER = (10.0 / 0.3)
-    RUN_SPEED_KMPH = 20.0
-    RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
-    RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
-    RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
 
-
-    def __init__(self):
-        self.x, self.y = 100, 300
-        self.keydown = 0
-        self.imagenum = 8
-        self.imagey = 0
-        self.charsize = 70
-        self.frame = 0
-        self.Speed_PPS = 100
-        self.power = 2
-        self.bullet = []
-        self.image = load_image('image//kirby.png')
-    def update(self, frame_time):
-        distance = self.Speed_PPS * frame_time
-        self.frame = (self.frame + 1) % self.imagenum
-        if self.keydown == 1:
-            if self.y <= 530:
-                self.y += distance
-        elif self.keydown == 2:
-            if self.y >= 70:
-                self.y -= distance
-        elif self.keydown == 3:
-            if self.power == 1:
-                self.imagey = 3
-                self.imagenum = 6
-            else:
-                self.imagey = 4
-                self.imagenum = 8
-        elif (self.imagey == 3 or self.imagey == 4) and self.frame == 0:
-            self.imagenum = 8
-            self.imagey = 0
-            self.frame = 0
-
-    def handle_event(self, event):
-        if event.type == SDL_KEYDOWN:
-            if event.key == SDLK_UP:
-                self.frame = 0
-                self.keydown = 1
-                self.imagey = 1
-                self.imagenum = 5
-            elif event.key == SDLK_DOWN:
-                self.frame = 0
-                self.keydown = 2
-                self.imagey = 2
-                self.imagenum = 5
-            elif event.key == SDLK_SPACE:
-                self.frame = 0
-                self.keydown = 3
-                self.bullet.append((self.x, self.y, False))
-
-
-        if event.type == SDL_KEYUP:
-            #if(kirby.keydown == 1 or kirby.keydown == 2):
-                kirby.keydown = 0
-                kirby.imagey = 0
-                kirby.imagenum = 8
-
-
-
-    def draw(self):
-        self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
-        #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
-
-class Coin1:
-    global kirby
-
-    def coilsion(self):
-        for i in range(8):
-            left_a, right_a, top_a, bottom_a = kirby.x - 30, kirby.x + 30, kirby.y + 30, kirby.y - 25
-            left_b, right_b, top_b, bottom_b = self.position[i][0] - self.moveX - 25, self.position[i][0] - self.moveX + 25,\
-                                               self.position[i][1] + 25, self.position[i][1] - 25
-
-            if left_b < right_a and left_b > left_a:
-                if top_b < top_a and top_b > bottom_a:
-                    self.position[i] = (self.position[i][0], self.position[i][1], True)
-                if bottom_b < top_a and bottom_b > bottom_a:
-                    self.position[i] = (self.position[i][0], self.position[i][1], True)
-            elif right_b < right_a and right_b > left_a:
-                if top_b < top_a and top_b > bottom_a:
-                    self.position[i] = (self.position[i][0], self.position[i][1], True)
-                if bottom_b < top_a and bottom_b > bottom_a:
-                    self.position[i] = (self.position[i][0], self.position[i][1], True)
-
-    def __init__(self):
-        self.position = []
-        for i in range(8):
-            if i < 4:
-                self.position.append((800 + (i * 50), 300 + (50 * i), False))
-            else:
-                self.position.append((800 + (i * 50), self.position[3][1] - (50 * (i-4)), False))
-        self.moveX = 0
-        self.image = load_image('image//coin_1.png')
-        self.imagex = 0
-    def update(self):
-        self.moveX += 10
-        self.imagex = (self.imagex + 1) % 7
-        self.coilsion()
-        if self.position[0][0] - self.moveX < -790:
-            self.moveX = 0
-            for i in range(8):
-                if i < 4:
-                    self.position[i] = ((800 + (i * 50), 300 + (50 * i), False))
-                else:
-                    self.position[i] = ((800 + (i * 50), self.position[3][1] - (50 * (i - 4)), False))
-
-    def draw(self):
-        for i in range(8):
-            if self.position[i][2] == False:
-                self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
-                #draw_rectangle(self.position[i][0] - self.moveX - 25, self.position[i][1] - 25, self.position[i][0] - self.moveX + 25, self.position[i][1] + 25)
 class Coin2:
 
 
@@ -301,26 +190,6 @@ class Coin4:
             if self.position[i][2] == False:
                 self.image.clip_draw((self.imagex * 50), 0, 50, 50, self.position[i][0] - self.moveX, self.position[i][1])
 
-class Sky:
-    def __init__(self):
-        self.image = load_image('image//bg.png')
-        self.image2 = load_image('image//bg_1.png')
-        self.x, self.y = 400, 300
-        self.x2 = 1200
-        self.endBG = 0
-        self.Speed_PPS = 100
-    def update(self):
-        self.x -= 10
-        self.x2 -= 10
-        if self.x == -400:
-            self.x = self.x2 + 800
-
-        if self.x2 == -400:
-            self.x2 = self.x + 800
-
-    def draw(self):
-         self.image.draw(self.x, self.y)
-         self.image2.draw(self.x2, self.y)
 
 class Monster:
     def __init__(self):
@@ -375,7 +244,7 @@ def update():
     current_time += frame_time
     kirby.update(frame_time)
     sky.update()
-    coin1.update()
+    coin1.update(kirby)
     coin2.update()
     coin3.update()
     coin4.update()
