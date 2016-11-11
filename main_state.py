@@ -8,6 +8,7 @@ from Coin1 import Coin1
 from Coin2 import Coin2
 from Coin3 import Coin3
 from Coin4 import Coin4
+from Monster import Monster
 from Sky import Sky
 import game_framework
 import title_state
@@ -21,25 +22,21 @@ coin2 = None
 coin3 = None
 coin4 = None
 running = True
+monster = None
 front = None
 current_time = get_time()
 
 
 
-class Monster:
-    def __init__(self):
-         self.x, self.y = 800, random.randint(0, 600)
-
-
-
 def enter():
-    global kirby, sky, coin1, coin2, coin3, coin4
+    global kirby, sky, coin1, coin2, coin3, coin4, monster
     kirby = Kirby()
     sky = Sky()
     coin1 = Coin1()
     coin2 = Coin2()
     coin3 = Coin3()
     coin4 = Coin4()
+    monster = Monster()
 
 
 def exit():
@@ -77,6 +74,7 @@ def update():
     current_time += frame_time
     kirby.update(frame_time)
     sky.update()
+    monster.update(current_time, frame_time)
     coin1.update(kirby)
     coin2.update(kirby)
     coin3.update(kirby)
@@ -94,6 +92,7 @@ def draw():
     coin3.draw()
     coin4.draw()
     kirby.draw()
+    monster.draw()
     update_canvas()
 
 
