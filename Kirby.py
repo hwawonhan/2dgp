@@ -20,6 +20,9 @@ class Kirby:
         self.power = 2
         self.bullet = []
         self.image = load_image('image//kirby.png')
+        self.bulletimage = load_image('image//kirbybullet.png')
+        self.bulletframe = 0
+        self.bulletimagey = 0
     def update(self, frame_time):
         distance = self.Speed_PPS * frame_time
         self.frame = (self.frame + 1) % self.imagenum
@@ -41,6 +44,9 @@ class Kirby:
             self.imagey = 0
             self.frame = 0
 
+
+
+
     def handle_event(self, event):
         if event.type == SDL_KEYDOWN:
             if event.key == SDLK_UP:
@@ -56,7 +62,9 @@ class Kirby:
             elif event.key == SDLK_SPACE:
                 self.frame = 0
                 self.keydown = 3
-                self.bullet.append((self.x, self.y, False))
+                bulletx = self.x + 20
+                bullety = self.y
+                self.bullet.append([bulletx, bullety])
 
 
         if event.type == SDL_KEYUP:
@@ -65,8 +73,16 @@ class Kirby:
                 self.imagey = 0
                 self.imagenum = 8
 
-
-
+    def draw_bullet(self, bullet, bx, by):
+        self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
+        if len(self.bullet) != 0:
+            for i, bxy  in enumerate(self.bullet):
+                bxy[0] += 10
+                self.bulletframe = (self.bulletframe + 1) % 6
+                self.bullet[i][0] = bxy[0]
+                self.draw_bullet(self.bullet, bxy[0], bxy[1])
+                if bxy[0] >= 800:
+                    self.bullet.remove(bxy)
