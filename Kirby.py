@@ -79,11 +79,13 @@ class Kirby:
 
 
         if event.type == SDL_KEYUP:
-            #if(kirby.keydown == 1 or kirby.keydown == 2):
+            if event.key == SDLK_SPACE:
+                self.bulletkey = False
+                #if(kirby.keydown == 1 or kirby.keydown == 2):
+            else:
                 self.keydown = 0
                 self.imagey = 0
                 self.imagenum = 8
-                self.bulletkey = False
 
     def draw_bullet(self, bullet, bx, by):
         self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
