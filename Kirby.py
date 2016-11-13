@@ -16,9 +16,10 @@ class Kirby:
         self.imagey = 0
         self.charsize = 70
         self.frame = 0
-        self.Speed_PPS = 100
+        self.Speed_PPS = 150
         self.power = 2
         self.bullet = []
+        self.bulletkey = False
         self.image = load_image('image//kirby.png')
         self.bulletimage = load_image('image//kirbybullet.png')
         self.bulletframe = 0
@@ -44,6 +45,11 @@ class Kirby:
             self.imagey = 0
             self.frame = 0
 
+        if self.bulletkey == True:
+            bulletx = self.x + 20
+            bullety = self.y
+            self.bullet.append([bulletx, bullety])
+
 
 
 
@@ -54,6 +60,8 @@ class Kirby:
                 self.keydown = 1
                 self.imagey = 1
                 self.imagenum = 5
+
+
             elif event.key == SDLK_DOWN:
                 self.frame = 0
                 self.keydown = 2
@@ -61,10 +69,13 @@ class Kirby:
                 self.imagenum = 5
             elif event.key == SDLK_SPACE:
                 self.frame = 0
-                self.keydown = 3
-                bulletx = self.x + 20
-                bullety = self.y
-                self.bullet.append([bulletx, bullety])
+                if self.keydown == 1:
+                    self.bulletkey = True
+                elif self.keydown == 2:
+                    self.bulletkey = True
+                else:
+                    self.keydown = 3
+                    self.bulletkey = True
 
 
         if event.type == SDL_KEYUP:
@@ -72,6 +83,7 @@ class Kirby:
                 self.keydown = 0
                 self.imagey = 0
                 self.imagenum = 8
+                self.bulletkey = False
 
     def draw_bullet(self, bullet, bx, by):
         self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
@@ -80,8 +92,8 @@ class Kirby:
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
         if len(self.bullet) != 0:
             for i, bxy  in enumerate(self.bullet):
-                bxy[0] += 10
-                self.bulletframe = (self.bulletframe + 1) % 6
+                bxy[0] += 20
+                self.bulletframe = 3
                 self.bullet[i][0] = bxy[0]
                 self.draw_bullet(self.bullet, bxy[0], bxy[1])
                 if bxy[0] >= 800:
