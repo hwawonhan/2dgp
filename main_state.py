@@ -14,6 +14,7 @@ from Monster2 import Monster2
 from Sky import Sky
 import game_framework
 import title_state
+
 name = "MainState"
 
 
@@ -34,7 +35,7 @@ current_time = get_time()
 
 
 def enter():
-    global kirby, sky, coin1, coin2, coin3, coin4, monster, monster1, monster2
+    global kirby, sky, coin1, coin2, coin3, coin4, monster, monster1, monster2, current_time
     kirby = Kirby()
     sky = Sky()
     coin1 = Coin1()
@@ -48,6 +49,8 @@ def enter():
 
 def exit():
     global kirby, sky, coin1, coin2, coin3, coin4
+
+
     del(kirby)
     del(sky)
     del(coin1)
@@ -75,6 +78,7 @@ def handle_events():
         else:
             kirby.handle_event(event)
 
+
 def update():
     global coin1, coin2, coin3, coin4, current_time, kirby
     frame_time = get_time() - current_time
@@ -85,7 +89,7 @@ def update():
     for i in range(1):
         monster[i].update(current_time, frame_time, kirby)
     for i in range(2):
-        monster1[i].update(current_time,frame_time, kirby )
+        monster1[i].update(current_time,frame_time, kirby)
 
     monster2.update(current_time, frame_time, kirby)
     coin1.update(kirby, current_time)
@@ -94,9 +98,6 @@ def update():
     coin4.update(kirby, current_time)
     for i in range(1):
         kirby.coilsion(monster[i])
-
-
-
 
     delay(0.07)
 
@@ -107,12 +108,12 @@ def draw():
     coin2.draw()
     coin3.draw()
     coin4.draw()
-    kirby.draw()
     for i in range(1):
         monster[i].draw()
     for i in range(2):
         monster1[i].draw()
     monster2.draw()
+    kirby.draw()
     update_canvas()
 
 

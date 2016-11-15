@@ -1,4 +1,7 @@
 from pico2d import *
+import game_framework
+import title_state
+
 
 class Kirby:
     PIXEL_PER_METER = (10.0 / 0.3)
@@ -25,6 +28,7 @@ class Kirby:
         self.bulletimage = load_image('image//kirbybullet.png')
         self.hpimage = load_image('image//kirbyhp.png')
         self.hpimage_1 = load_image('image//kirbyhp_.png')
+        self.gameoverimage = load_image('image//gameover.png')
         self.bulletframe = 0
         self.bulletimagey = 0
     def update(self, frame_time):
@@ -97,29 +101,33 @@ class Kirby:
 
 
     def handle_event(self, event):
-        if event.type == SDL_KEYDOWN:
-            if event.key == SDLK_UP:
-                self.frame = 0
-                self.keydown = 1
-                self.imagey = 1
-                self.imagenum = 5
+        if self.hp > 0:
+            if event.type == SDL_KEYDOWN:
+                if event.key == SDLK_UP:
+                    self.frame = 0
+                    self.keydown = 1
+                    self.imagey = 1
+                    self.imagenum = 5
 
 
-            elif event.key == SDLK_DOWN:
-                self.frame = 0
-                self.keydown = 2
-                self.imagey = 2
-                self.imagenum = 5
-            elif event.key == SDLK_SPACE:
-                self.frame = 0
-                if self.keydown == 1:
-                    self.bulletkey = True
-                elif self.keydown == 2:
-                    self.bulletkey = True
-                else:
-                    self.keydown = 3
-                    self.bulletkey = True
-
+                elif event.key == SDLK_DOWN:
+                    self.frame = 0
+                    self.keydown = 2
+                    self.imagey = 2
+                    self.imagenum = 5
+                elif event.key == SDLK_SPACE:
+                    self.frame = 0
+                    if self.keydown == 1:
+                        self.bulletkey = True
+                    elif self.keydown == 2:
+                        self.bulletkey = True
+                    else:
+                        self.keydown = 3
+                        self.bulletkey = True
+        else:
+            if event.type == SDL_KEYDOWN:
+                if event.key == SDLK_ESCAPE:
+                    game_framework.change_state(title_state)
 
         if event.type == SDL_KEYUP:
             if event.key == SDLK_SPACE:
@@ -141,14 +149,19 @@ class Kirby:
         if crush == False:
             self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
     def draw(self):
-        self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
-        self.draw_hp()
-        #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
-        if len(self.bullet) != 0:
-            for i, bxy in enumerate(self.bullet):
-                bxy[0] += 20
-                self.bulletframe = 3
-                self.bullet[i][0] = bxy[0]
-                self.draw_bullet(bxy[0], bxy[1], bxy[2])
-                if bxy[0] >= 800:
-                    self.bullet.remove(bxy)
+        if self.hp > 0:
+            self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
+            self.draw_hp()
+            #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
+            if len(self.bullet) != 0:
+                for i, bxy in enumerate(self.bullet):
+                    bxy[0] += 20
+                    self.bulletframe = 3
+                    self.bullet[i][0] = bxy[0]
+                    self.draw_bullet(bxy[0], bxy[1], bxy[2])
+                    if bxy[0] >= 800:
+                        self.bullet.remove(bxy)
+        else:
+            self.gameoverimage.clip_draw(0, 0, 800, 600, 400, 300)
+
+
