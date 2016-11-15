@@ -88,10 +88,10 @@ def update():
         monster1[i].update(current_time,frame_time, kirby )
 
     monster2.update(current_time, frame_time, kirby)
-    coin1.update(kirby)
-    coin2.update(kirby)
-    coin3.update(kirby)
-    coin4.update(kirby)
+    coin1.update(kirby, current_time)
+    coin2.update(kirby, current_time)
+    coin3.update(kirby, current_time)
+    coin4.update(kirby, current_time)
     for i in range(1):
         kirby.coilsion(monster[i])
 

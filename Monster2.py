@@ -6,11 +6,13 @@ class Monster2:
     def __init__(self):
         self.x, self.y = 800, 300
         self.image = load_image('image//M6.png')
+        self.hpimage = load_image('image//kirbyhp_.png')
         self.frame = 0
         self.imagey = 0
         self.apper = False
         self.speed = 80
         self.crush = False
+        self.trance = 0
         self.HP = 100
     def update(self, current_time, frame_time, kirby):
         distance = self.speed * frame_time
@@ -41,12 +43,14 @@ class Monster2:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= 10
+                        self.trance += 5
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= 10
+                        self.trance += 5
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
@@ -54,18 +58,22 @@ class Monster2:
                 elif right_b < right_a and right_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= 10
+                        self.trance += 5
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= 10
+                        self.trance += 5
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
+    def draw_hp(self):
+        self.hpimage.clip_draw(0, 0, self.HP, 10, self.x - self.trance, self.y + 40)
 
     def draw(self):
         if self.apper == True and self.HP > 0:
             self.image.clip_draw(self.frame * 70, 0 + (70 * self.imagey), 70, 70, self.x, self.y)
-
+            self.draw_hp()

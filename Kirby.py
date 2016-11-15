@@ -1,6 +1,5 @@
 from pico2d import *
 
-
 class Kirby:
     PIXEL_PER_METER = (10.0 / 0.3)
     RUN_SPEED_KMPH = 20.0
@@ -20,8 +19,12 @@ class Kirby:
         self.power = 2
         self.bullet = []
         self.bulletkey = False
+        self.hp = 700
+        self.trancehp  = 0
         self.image = load_image('image//kirby.png')
         self.bulletimage = load_image('image//kirbybullet.png')
+        self.hpimage = load_image('image//kirbyhp.png')
+        self.hpimage_1 = load_image('image//kirbyhp_.png')
         self.bulletframe = 0
         self.bulletimagey = 0
     def update(self, frame_time):
@@ -48,7 +51,6 @@ class Kirby:
             self.imagenum = 8
             self.imagey = 0
             self.frame = 0
-
         if self.bulletkey == True:
             bulletx = self.x + 20
             bullety = self.y
@@ -63,20 +65,32 @@ class Kirby:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.imagey = 5
+                        self.imagenum = 5
                         self.imageframe = 1
+                        self.hp -= 10
+                        self.trancehp += 5
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.imagey = 5
+                        self.imagenum = 5
                         self.imageframe = 1
+                        self.hp -= 10
+                        self.trancehp += 5
                         i[2] = True
                 elif right_b < right_a and right_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.imagey = 5
+                        self.imagenum = 5
                         self.imageframe = 1
+                        self.hp -= 10
+                        self.trancehp += 5
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.imagey = 5
+                        self.imagenum = 5
                         self.imageframe = 1
+                        self.hp -= 10
+                        self.trancehp += 5
                         i[2] = True
 
 
@@ -117,11 +131,18 @@ class Kirby:
                 self.imagey = 0
                 self.imagenum = 8
 
+    def draw_hp(self):
+        if self.hp > 300:
+            self.hpimage.clip_draw(0, 0,  self.hp, 30, 400 - self.trancehp, 50)
+        else:
+            self.hpimage_1.clip_draw(0, 0,  self.hp, 30, 400 - self.trancehp, 50)
+
     def draw_bullet(self, bx, by, crush):
         if crush == False:
             self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
+        self.draw_hp()
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
         if len(self.bullet) != 0:
             for i, bxy in enumerate(self.bullet):

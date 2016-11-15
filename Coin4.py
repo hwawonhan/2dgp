@@ -36,11 +36,11 @@ class Coin4:
         self.moveX = 0
         self.image = load_image('image//coin_1.png')
         self.imagex = 0
-    def update(self, kirby):
+    def update(self, kirby, current_time):
         self.moveX += 10
         self.imagex = (self.imagex + 1) % 7
         self.coilsion(kirby)
-        if self.position[0][0] - self.moveX < -790:
+        if self.position[0][0] - self.moveX < -790 and current_time < 40:
             self.moveX = 0
             j = 0
             for i in range(8):
