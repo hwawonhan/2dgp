@@ -44,11 +44,40 @@ class Kirby:
             self.imagenum = 8
             self.imagey = 0
             self.frame = 0
+        elif self.imagey == 5 and self.frame == 0:
+            self.imagenum = 8
+            self.imagey = 0
+            self.frame = 0
 
         if self.bulletkey == True:
             bulletx = self.x + 20
             bullety = self.y
-            self.bullet.append([bulletx, bullety])
+            self.bullet.append([bulletx, bullety, False])
+
+    def coilsion(self, monster):
+        for i in monster.bullet:
+            left_a, right_a, top_a, bottom_a = self.x - 25, self.x + 25, self.y + 25, self.y - 25
+            left_b, right_b, top_b, bottom_b = i[0] - 10, i[0] + 10, i[1] - 10, i[1] + 10
+
+            if i[2] == False and monster.HP > 0:
+                if left_b < right_a and left_b > left_a:
+                    if top_b < top_a and top_b > bottom_a:
+                        self.imagey = 5
+                        self.imageframe = 1
+                        i[2] = True
+                    if bottom_b < top_a and bottom_b > bottom_a:
+                        self.imagey = 5
+                        self.imageframe = 1
+                        i[2] = True
+                elif right_b < right_a and right_b > left_a:
+                    if top_b < top_a and top_b > bottom_a:
+                        self.imagey = 5
+                        self.imageframe = 1
+                        i[2] = True
+                    if bottom_b < top_a and bottom_b > bottom_a:
+                        self.imagey = 5
+                        self.imageframe = 1
+                        i[2] = True
 
 
 
@@ -81,22 +110,24 @@ class Kirby:
         if event.type == SDL_KEYUP:
             if event.key == SDLK_SPACE:
                 self.bulletkey = False
+                self.keydown = 0
                 #if(kirby.keydown == 1 or kirby.keydown == 2):
             else:
                 self.keydown = 0
                 self.imagey = 0
                 self.imagenum = 8
 
-    def draw_bullet(self, bullet, bx, by):
-        self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
+    def draw_bullet(self, bx, by, crush):
+        if crush == False:
+            self.bulletimage.clip_draw(self.bulletframe* 50, 0 + (50*self.bulletimagey), 50, 50, bx, by)
     def draw(self):
         self.image.clip_draw(self.frame * 71, 0 + (73 * self.imagey), self.charsize, self.charsize, self.x, self.y)
         #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
         if len(self.bullet) != 0:
-            for i, bxy  in enumerate(self.bullet):
+            for i, bxy in enumerate(self.bullet):
                 bxy[0] += 20
                 self.bulletframe = 3
                 self.bullet[i][0] = bxy[0]
-                self.draw_bullet(self.bullet, bxy[0], bxy[1])
+                self.draw_bullet(bxy[0], bxy[1], bxy[2])
                 if bxy[0] >= 800:
                     self.bullet.remove(bxy)

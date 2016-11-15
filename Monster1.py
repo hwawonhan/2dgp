@@ -2,53 +2,40 @@ from pico2d import *
 from Kirby import Kirby
 import random
 
-class Monster:
+class Monster1:
     def __init__(self):
         self.x, self.y = 800, random.randint(100, 500)
-        self.image = load_image('image//M10.png')
-        self.bulletimage = load_image('image//monsterbullet.png')
+        self.image = load_image('image//M3.png')
         self.frame = 0
         self.imagey = 0
-        self.updownkey = 0
         self.apper = False
-        self.crush = False
-        self.HP = 30
         self.speed = 80
-        self.bullet = []
-        self.shoutAngle = 0
-        self.shoutAngleRate = 20
-        self.shoutSpeed = 1
-        self.Anglerate = 0.02
-        self.Speedra1te = 0.01
-        self.Speedrate = 0.1
+        self.crush = False
+        self.HP = 70
+        self.remove = False
+
+
+
+
     def update(self, current_time, frame_time, kirby):
         distance = self.speed * frame_time
-        if(self.crush == True):
-            self.frame = (self.frame + 1) % 6
-            if(self.frame == 0):
+        if (self.crush == True):
+            self.frame = (self.frame + 1) % 3
+            if (self.frame == 0):
                 self.crush = False
                 self.imagey = 0
         else:
-            self.frame = (self.frame + 1) % 7
-            #if self.frame % 5 == 0 and self.apper == True and self.HP > 0:
-        if self.updownkey == 0:
-            self.y -= 5
-            if self.y < 50:
-                self.updownkey = 1
-        else:
-            self.y += 5
-            if self.y > 550:
-                self.updownkey = 0
+            self.frame = (self.frame + 1) % 5
         if self.apper == True:
             self.coilsion(kirby)
-            if (self.x > 600):
-                self.x -= distance
-            else:
-                self.bullet.append([self.x, self.y, False])
         if self.apper == False:
-            if current_time > 10:
+            if current_time > 20:
                 self.apper = True
-                print('apper')
+                print('apper2')
+
+        else:
+            if(self.x > 600):
+                self.x -= distance
 
     def coilsion(self, kirby):
         for i in kirby.bullet:
@@ -84,17 +71,7 @@ class Monster:
                         i[2] = True
 
 
-    def draw_bullet(self, bx, by, on):
-        if on == False and self.HP >  0:
-            self.bulletimage.clip_draw(0, 0, 20, 20, bx, by)
-
     def draw(self):
         if self.apper == True and self.HP > 0:
-            self.image.clip_draw(self.frame * 50, 0 + (50 * self.imagey), 50, 50, self.x, self.y)
-        if len(self.bullet) != 0:
-            for i, bxy in enumerate(self.bullet):
-                bxy[0] -= 50
-                self.bullet[i][0] = bxy[0]
-                self.draw_bullet(bxy[0], bxy[1], bxy[2])
-                if bxy[0] >= 800:
-                    self.bullet.remove(bxy)
+            self.image.clip_draw(self.frame * 60, 0 + (60 * self.imagey), 60, 60, self.x, self.y)
+
