@@ -26,7 +26,7 @@ class Monster2:
         if self.apper == True:
             self.coilsion(kirby)
         if self.apper == False:
-            if current_time > 30:
+            if current_time > 10:
                 self.apper = True
                 print('apper2')
 

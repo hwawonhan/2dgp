@@ -49,7 +49,7 @@ class Monster:
 
 
         if self.apper == False:
-            if current_time > 10:
+            if current_time > 30:
                 self.apper = True
                 print('apper')
 

@@ -124,6 +124,8 @@ class Kirby:
                     else:
                         self.keydown = 3
                         self.bulletkey = True
+                elif event.key == SDLK_i:
+                    self.bulletimagey = 1
         else:
             if event.type == SDL_KEYDOWN:
                 if event.key == SDLK_ESCAPE:

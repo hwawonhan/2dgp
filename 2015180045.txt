@@ -1,0 +1,34 @@
+Tue Nov 15 18:48:47 2016 +0900 3last
+Tue Nov 15 16:58:15 2016 +0900 hpbar
+Tue Nov 15 16:18:26 2016 +0900 update
+Mon Nov 14 01:16:22 2016 +0900 bullet
+Mon Nov 14 00:37:31 2016 +0900 buuullll
+Sat Nov 12 23:35:14 2016 +0900 kirby bullet
+Fri Nov 11 12:27:43 2016 +0900 monster update
+Fri Nov 11 00:00:08 2016 +0900 update
+Thu Nov 10 23:18:25 2016 +0900 분할
+Wed Nov 9 16:10:38 2016 +0900 char time
+Tue Nov 8 23:49:38 2016 +0900 kirby keyboard
+Mon Nov 7 14:37:20 2016 +0900 ask
+Sun Nov 6 19:46:16 2016 +0900 bullet
+Wed Nov 2 21:46:47 2016 +0900 monster
+Wed Nov 2 21:27:58 2016 +0900 Monster image update
+Tue Oct 18 18:12:53 2016 +0900 자체평가
+Mon Oct 17 22:11:08 2016 +0900 발표용 ppt
+Mon Oct 17 22:08:15 2016 +0900 ppt수정
+Mon Oct 17 19:57:06 2016 +0900 coin 무한으로 나오기
+Thu Oct 13 23:08:07 2016 +0900 ppt수정
+Thu Oct 13 20:43:51 2016 +0900 PPT 수정
+Thu Oct 13 20:08:10 2016 +0900 모든 코인 충돌
+Thu Oct 13 19:48:18 2016 +0900 coilsion
+Thu Oct 13 18:39:37 2016 +0900 2차발표 ppt
+Wed Oct 12 21:22:21 2016 +0900 map_coin
+Wed Oct 12 16:13:19 2016 +0900 bg.png
+Sun Oct 9 23:26:49 2016 +0900 project_1.pptx
+Sun Oct 9 23:18:33 2016 +0900 text
+Sun Oct 9 23:15:38 2016 +0900 test.txt
+Sun Oct 9 18:03:21 2016 +0900 MyGame.py
+Sun Oct 9 17:58:25 2016 +0900 kirby.png
+Sat Oct 8 15:38:32 2016 +0900 Signed-off-by: 2dgp <hwawon22@naver.com> MyGame.py coin.png kirby.png
+Sat Oct 8 13:34:20 2016 +0900 MyGame.py bg.png bg_1.png coin.png kirby.png
+Thu Sep 22 18:57:29 2016 +0900 first_project

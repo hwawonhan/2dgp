@@ -98,6 +98,8 @@ def update():
     coin4.update(kirby, current_time)
     for i in range(1):
         kirby.coilsion(monster[i])
+    for i in range(2):
+        kirby.coilsion(monster1[i])
 
     delay(0.07)
 
