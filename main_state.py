@@ -100,6 +100,7 @@ def update():
         kirby.coilsion(monster[i])
     for i in range(2):
         kirby.coilsion(monster1[i])
+    kirby.coilsion(monster2)
 
     delay(0.07)
 
