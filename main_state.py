@@ -11,6 +11,7 @@ from Coin4 import Coin4
 from Monster import Monster
 from Monster1 import Monster1
 from Monster2 import Monster2
+from Boss import Boss
 from Sky import Sky
 import game_framework
 import title_state
@@ -28,6 +29,7 @@ running = True
 monster = None
 monster1 = None
 monster2 = None
+boss = None
 front = None
 current_time = get_time()
 
@@ -35,13 +37,14 @@ current_time = get_time()
 
 
 def enter():
-    global kirby, sky, coin1, coin2, coin3, coin4, monster, monster1, monster2, current_time
+    global kirby, sky, coin1, coin2, coin3, coin4, monster, monster1, monster2, current_time, boss
     kirby = Kirby()
     sky = Sky()
     coin1 = Coin1()
     coin2 = Coin2()
     coin3 = Coin3()
     coin4 = Coin4()
+    boss = Boss()
     monster = [Monster() for i in range(1) ]
     monster1 = [Monster1() for i in range(2)]
     monster2 = Monster2()
@@ -80,7 +83,7 @@ def handle_events():
 
 
 def update():
-    global coin1, coin2, coin3, coin4, current_time, kirby
+    global coin1, coin2, coin3, coin4, current_time, kirby, boss
     frame_time = get_time() - current_time
     current_time += frame_time
 
@@ -92,6 +95,7 @@ def update():
         monster1[i].update(current_time,frame_time, kirby)
 
     monster2.update(current_time, frame_time, kirby)
+    boss.update(current_time, frame_time, kirby)
     coin1.update(kirby, current_time)
     coin2.update(kirby, current_time)
     coin3.update(kirby, current_time)
@@ -101,7 +105,7 @@ def update():
     for i in range(2):
         kirby.coilsion(monster1[i])
     kirby.coilsion(monster2)
-
+    kirby.coilsion(boss)
     delay(0.07)
 
 def draw():
@@ -116,6 +120,7 @@ def draw():
     for i in range(2):
         monster1[i].draw()
     monster2.draw()
+    boss.draw()
     kirby.draw()
     update_canvas()
 
