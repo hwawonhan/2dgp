@@ -10,6 +10,7 @@ class Monster:
         self.hpimage = load_image('image//kirbyhp_.png')
         self.frame = 0
         self.imagey = 0
+        self.life_time = 0.0
         self.updownkey = 0
         self.apper = False
         self.crush = False
@@ -24,6 +25,7 @@ class Monster:
         self.Speedra1te = 0.01
         self.Speedrate = 0.1
     def update(self, current_time, frame_time, kirby):
+        self.life_time += frame_time
         distance = self.speed * frame_time
         if(self.crush == True):
             self.frame = (self.frame + 1) % 6
@@ -32,7 +34,7 @@ class Monster:
                 self.imagey = 0
         else:
             self.frame = (self.frame + 1) % 7
-            if self.frame % 5 == 0 and self.apper == True and self.HP > 0:
+            if self.frame % 6 == 0 and self.apper == True and self.HP > 0:
                 self.bullet.append([self.x, self.y, False])
         if self.updownkey == 0:
             self.y -= 5
@@ -49,7 +51,7 @@ class Monster:
 
 
         if self.apper == False:
-            if current_time > 30:
+            if self.life_time > 10:
                 self.apper = True
                 print('apper')
 

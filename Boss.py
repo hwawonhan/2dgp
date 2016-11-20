@@ -9,6 +9,7 @@ class Boss:
         self.bulletimage = load_image('image//monsterbullet.png')
         self.hpimage = load_image('image//kirbyhp_.png')
         self.frame = 0
+        self.life_time = 0.0
         self.imagey = 0
         self.updownkey = 0
         self.apper = False
@@ -24,6 +25,7 @@ class Boss:
         self.Speedra1te = 0.01
         self.Speedrate = 0.1
     def update(self, current_time, frame_time, kirby):
+        self.life_time += frame_time
         distance = self.speed * frame_time
         if(self.crush == True):
             self.frame = (self.frame + 1) % 2
@@ -32,7 +34,7 @@ class Boss:
                 self.imagey = 0
         else:
             self.frame = (self.frame + 1) % 4
-            if self.frame % 2 == 0 and self.apper == True and self.HP > 0:
+            if self.frame % 3 == 0 and self.apper == True and self.HP > 0:
                 self.bullet.append([self.x, self.y, False])
         if self.updownkey == 0:
             self.y -= 5
@@ -49,7 +51,7 @@ class Boss:
 
 
         if self.apper == False:
-            if current_time > 40:
+            if self.life_time > 40:
                 self.apper = True
                 print('apper')
 

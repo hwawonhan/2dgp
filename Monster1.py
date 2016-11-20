@@ -8,6 +8,7 @@ class Monster1:
         self.image = load_image('image//M3.png')
         self.hpimage = load_image('image//kirbyhp_.png')
         self.frame = 0
+        self.life_time = 0.0
         self.imagey = 0
         self.apper = False
         self.speed = 80
@@ -24,6 +25,7 @@ class Monster1:
         self.Speedra1te = 0.01
         self.Speedrate = 0.1
     def update(self, current_time, frame_time, kirby):
+        self.life_time += frame_time
         distance = self.speed * frame_time
         if (self.crush == True):
             self.frame = (self.frame + 1) % 3
@@ -32,12 +34,12 @@ class Monster1:
                 self.imagey = 0
         else:
             self.frame = (self.frame + 1) % 5
-            if self.frame % 4 == 0 and self.apper == True and self.HP > 0:
+            if self.frame % 3 == 0 and self.apper == True and self.HP > 0:
                 self.bullet.append([self.x, self.y, False])
         if self.apper == True:
             self.coilsion(kirby)
         if self.apper == False:
-            if current_time > 20:
+            if self.life_time > 20:
                 self.apper = True
                 print('apper2')
 

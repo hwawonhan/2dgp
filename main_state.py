@@ -1,8 +1,12 @@
 import random
-import json
 import os
+import json
 
 from pico2d import*
+import game_framework
+import title_state
+import ranking_state
+
 from Kirby import Kirby
 from Coin1 import Coin1
 from Coin2 import Coin2
@@ -13,8 +17,6 @@ from Monster1 import Monster1
 from Monster2 import Monster2
 from Boss import Boss
 from Sky import Sky
-import game_framework
-import title_state
 
 name = "MainState"
 
@@ -48,6 +50,7 @@ def enter():
     monster = [Monster() for i in range(1) ]
     monster1 = [Monster1() for i in range(2)]
     monster2 = Monster2()
+    game_framework.reset_time()
 
 
 def exit():
@@ -78,6 +81,8 @@ def handle_events():
             game_framework.quit()
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             game_framework.change_state(title_state)
+        elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_q):
+            game_framework.change_state(ranking_state)
         else:
             kirby.handle_event(event)
 

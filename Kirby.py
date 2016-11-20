@@ -16,6 +16,7 @@ class Kirby:
         self.keydown = 0
         self.imagenum = 8
         self.imagey = 0
+        self.life_time = 0
         self.charsize = 70
         self.frame = 0
         self.Speed_PPS = 150
@@ -32,6 +33,7 @@ class Kirby:
         self.bulletframe = 0
         self.bulletimagey = 0
     def update(self, frame_time):
+        self.life_time += frame_time
         distance = self.Speed_PPS * frame_time
         self.frame = (self.frame + 1) % self.imagenum
         if self.keydown == 1:
@@ -157,7 +159,7 @@ class Kirby:
             #draw_rectangle(self.x - 30, self.y - 30, self.x + 30, self.y + 25)
             if len(self.bullet) != 0:
                 for i, bxy in enumerate(self.bullet):
-                    bxy[0] += 20
+                    bxy[0] += 30
                     self.bulletframe = 3
                     self.bullet[i][0] = bxy[0]
                     self.draw_bullet(bxy[0], bxy[1], bxy[2])
