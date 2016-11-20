@@ -14,13 +14,21 @@ class Coin3:
             if left_b < right_a and left_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
                     self.position[i] = (self.position[i][0], self.position[i][1], True)
+                    kirby.score += 10
+
                 if bottom_b < top_a and bottom_b > bottom_a:
                     self.position[i] = (self.position[i][0], self.position[i][1], True)
+                    kirby.score += 10
+
             elif right_b < right_a and right_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
                     self.position[i] = (self.position[i][0], self.position[i][1], True)
+                    kirby.score += 10
+
                 if bottom_b < top_a and bottom_b > bottom_a:
                     self.position[i] = (self.position[i][0], self.position[i][1], True)
+                    kirby.score += 10
+
 
 
     def __init__(self):

@@ -32,6 +32,7 @@ class Kirby:
         self.gameoverimage = load_image('image//gameover.png')
         self.bulletframe = 0
         self.bulletimagey = 0
+        self.score = 0
     def update(self, frame_time):
         self.life_time += frame_time
         distance = self.Speed_PPS * frame_time

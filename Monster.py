@@ -64,6 +64,8 @@ class Monster:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= 10
+                        if self.HP == 0:
+                            kirby.score += 100
                         self.trance += 5
                         self.crush = True
                         self.imagey = 1
@@ -71,8 +73,9 @@ class Monster:
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= 10
+                        if self.HP == 0:
+                            kirby.score += 100
                         self.trance += 5
-
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
@@ -80,16 +83,18 @@ class Monster:
                 elif right_b < right_a and right_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= 10
+                        if self.HP == 0:
+                            kirby.score += 100
                         self.trance += 5
-
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= 10
+                        if self.HP == 0:
+                            kirby.score += 100
                         self.trance += 5
-
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
