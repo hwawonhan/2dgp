@@ -106,7 +106,7 @@ class Boss:
 
     def draw_bullet(self, bx, by, on):
         if on == False and self.HP >  0:
-            self.bulletimage.clip_draw(0, 0, 20, 20, bx, by)
+            self.bulletimage.clip_draw(0, 60, 20, 20, bx, by)
 
     def draw(self):
         if self.apper == True and self.HP > 0:

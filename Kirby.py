@@ -2,6 +2,8 @@ from pico2d import *
 import game_framework
 import title_state
 
+font = None
+
 
 class Kirby:
     PIXEL_PER_METER = (10.0 / 0.3)
@@ -9,10 +11,10 @@ class Kirby:
     RUN_SPEED_MPM = (RUN_SPEED_KMPH * 1000.0 / 60.0)
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
     RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
-
-
     def __init__(self):
+        global font
         self.x, self.y = 100, 300
+        font = load_font('ENCR10B.TTF', 40)
         self.keydown = 0
         self.imagenum = 8
         self.imagey = 0
@@ -26,6 +28,7 @@ class Kirby:
         self.hp = 700
         self.trancehp  = 0
         self.image = load_image('image//kirby.png')
+        self.imageki = load_image('image//ki.png')
         self.bulletimage = load_image('image//kirbybullet.png')
         self.hpimage = load_image('image//kirbyhp.png')
         self.hpimage_1 = load_image('image//kirbyhp_.png')
@@ -149,6 +152,7 @@ class Kirby:
             self.hpimage.clip_draw(0, 0,  self.hp, 30, 400 - self.trancehp, 50)
         else:
             self.hpimage_1.clip_draw(0, 0,  self.hp, 30, 400 - self.trancehp, 50)
+        self.imageki.clip_draw(0, 0, 70, 70, 40, 40)
 
     def draw_bullet(self, bx, by, crush):
         if crush == False:
@@ -168,5 +172,6 @@ class Kirby:
                         self.bullet.remove(bxy)
         else:
             self.gameoverimage.clip_draw(0, 0, 800, 600, 400, 300)
+        #font.draw(100, 40, "Score: %3f" % self.score)
 
 
