@@ -2,7 +2,6 @@ from pico2d import *
 import game_framework
 import title_state
 
-font = None
 
 
 class Kirby:
@@ -12,9 +11,8 @@ class Kirby:
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
     RUN_SPEED_PPS = (RUN_SPEED_MPS*PIXEL_PER_METER)
     def __init__(self):
-        global font
         self.x, self.y = 100, 300
-        font = load_font('ENCR10B.TTF', 40)
+        self.font = load_font('ENCR10B.TTF')
         self.keydown = 0
         self.imagenum = 8
         self.imagey = 0
@@ -172,6 +170,6 @@ class Kirby:
                         self.bullet.remove(bxy)
         else:
             self.gameoverimage.clip_draw(0, 0, 800, 600, 400, 300)
-        #font.draw(100, 40, "Score: %3f" % self.score)
+        self.font.draw(10, 100, 'Score : %3d' % self.score, (255, 255, 255))
 
 
