@@ -38,11 +38,11 @@ class Boss:
                 self.bullet.append([self.x, self.y, False])
         if self.updownkey == 0:
             self.y -= 5
-            if self.y < 40:
+            if self.y < 150:
                 self.updownkey = 1
         else:
             self.y += 5
-            if self.y > 550:
+            if self.y > 500:
                 self.updownkey = 0
         if self.apper == True:
             self.coilsion(kirby)
@@ -57,9 +57,9 @@ class Boss:
 
     def coilsion(self, kirby):
         for i in kirby.bullet:
-            left_a, right_a, top_a, bottom_a = self.x - 75, self.x + 75, self.y + 75, self.y - 75
+            left_a, right_a, top_a, bottom_a = self.x - 30, self.x + 30, self.y + 75, self.y + 25
             left_b, right_b, top_b, bottom_b = i[0] - 25, i[0] + 25, i[1] - 25, i[1] + 25
-
+            draw_rectangle(left_a,top_a,right_a, bottom_a)
             if self.crush == False and i[2] == False and self.HP > 0:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:

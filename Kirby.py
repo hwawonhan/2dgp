@@ -39,10 +39,10 @@ class Kirby:
         distance = self.Speed_PPS * frame_time
         self.frame = (self.frame + 1) % self.imagenum
         if self.keydown == 1:
-            if self.y <= 530:
+            if self.y <= 500:
                 self.y += distance
         elif self.keydown == 2:
-            if self.y >= 70:
+            if self.y >= 130:
                 self.y -= distance
         elif self.keydown == 4:
             if self.x <= 730:

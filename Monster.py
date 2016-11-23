@@ -38,7 +38,7 @@ class Monster:
                 self.bullet.append([self.x, self.y, False])
         if self.updownkey == 0:
             self.y -= 5
-            if self.y < 50:
+            if self.y < 150:
                 self.updownkey = 1
         else:
             self.y += 5

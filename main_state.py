@@ -46,7 +46,7 @@ def enter():
     coin4 = Coin4()
     boss = Boss()
     monster = [Monster() for i in range(1) ]
-    monster1 = [Monster1() for i in range(2)]
+    monster1 = [Monster1(i) for i in range(2)]
     monster2 = Monster2()
     game_framework.reset_time()
 

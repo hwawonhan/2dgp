@@ -3,8 +3,8 @@ from Kirby import Kirby
 import random
 
 class Monster1:
-    def __init__(self):
-        self.x, self.y = 800, random.randint(100, 500)
+    def __init__(self, i):
+        self.x, self.y = 800, (i+1) * 200
         self.image = load_image('image//M3.png')
         self.hpimage = load_image('image//kirbyhp_.png')
         self.frame = 0
@@ -35,8 +35,8 @@ class Monster1:
         else:
             self.frame = (self.frame + 1) % 5
             if self.frame % 5 == 0 and self.apper == True and self.HP > 0:
-                for i in range(12):
-                    self.bullet.append([self.x, self.y, False, i*30])
+                self.bullet.append([self.x, self.y, False, 30, 5])
+
         if self.apper == True:
             self.coilsion(kirby)
         if self.apper == False:
@@ -103,8 +103,12 @@ class Monster1:
     def draw(self):
         if len(self.bullet) != 0:
             for i, bxy in enumerate(self.bullet):
-                bxy[0] -= math.cos(bxy[3]*3.141592/180) * 20
-                bxy[1] -= math.sin(bxy[3]*3.141592/180) * 20
+                bxy[3] += 10
+                if bxy[4] < 10:
+                    bxy[4] += 1
+                bxy[0] -= math.cos(bxy[3]*math.pi/180) * bxy[4]
+                bxy[0] -= 10
+                bxy[1] -= math.sin(bxy[3]*math.pi/180) * bxy[4]
                 self.bullet[i][0] = bxy[0]
                 self.draw_bullet(bxy[0], bxy[1], bxy[2])
                 if bxy[0] >= 800:

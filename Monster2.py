@@ -36,7 +36,8 @@ class Monster2:
         else:
             self.frame = (self.frame + 1) % 5
             if self.frame % 5 == 0 and self.apper == True and self.HP > 0:
-                self.bullet.append([self.x, self.y, False])
+                for i in range(12):
+                    self.bullet.append([self.x, self.y, False, i*30])
         if self.apper == True:
             self.coilsion(kirby)
         if self.apper == False:
@@ -100,13 +101,16 @@ class Monster2:
 
 
     def draw(self):
-        if self.apper == True and self.HP > 0:
-            self.image.clip_draw(self.frame * 70, 0 + (70 * self.imagey), 70, 70, self.x, self.y)
-            self.draw_hp()
         if len(self.bullet) != 0:
             for i, bxy in enumerate(self.bullet):
-                bxy[0] -= 50
+                bxy[0] -= math.cos(bxy[3] * 3.141592 / 180) * 20
+                bxy[1] -= math.sin(bxy[3] * 3.141592 / 180) * 20
                 self.bullet[i][0] = bxy[0]
                 self.draw_bullet(bxy[0], bxy[1], bxy[2])
                 if bxy[0] >= 800:
                     self.bullet.remove(bxy)
+
+        if self.apper == True and self.HP > 0:
+            self.image.clip_draw(self.frame * 70, 0 + (70 * self.imagey), 70, 70, self.x, self.y)
+            self.draw_hp()
+
