@@ -14,7 +14,7 @@ class Boss:
         self.updownkey = 0
         self.apper = False
         self.crush = False
-        self.HP = 100
+        self.HP = 700
         self.trance = 0
         self.speed = 80
         self.bullet = []
@@ -102,7 +102,7 @@ class Boss:
 
 
     def draw_hp(self):
-        self.hpimage.clip_draw(0, 0, self.HP, 10,self.x - self.trance, self.y + 100)
+        self.hpimage.clip_draw(0, 0, self.HP, 30, 400 - self.trance, 550)
 
     def draw_bullet(self, bx, by, on):
         if on == False and self.HP >  0:

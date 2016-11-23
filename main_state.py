@@ -1,8 +1,6 @@
-import random
-import os
+from pico2d import*
 import json
 
-from pico2d import*
 import game_framework
 import title_state
 import ranking_state
@@ -55,6 +53,8 @@ def enter():
 
 def exit():
     global kirby, sky, coin1, coin2, coin3, coin4
+
+
 
 
     del(kirby)

@@ -24,7 +24,7 @@ class Kirby:
         self.bullet = []
         self.bulletkey = False
         self.hp = 700
-        self.trancehp  = 0
+        self.trancehp = 0
         self.image = load_image('image//kirby.png')
         self.imageki = load_image('image//ki.png')
         self.bulletimage = load_image('image//kirbybullet.png')
@@ -44,6 +44,13 @@ class Kirby:
         elif self.keydown == 2:
             if self.y >= 70:
                 self.y -= distance
+        elif self.keydown == 4:
+            if self.x <= 730:
+                self.x += distance
+        elif self.keydown == 5:
+            if self.x >= 70:
+                self.x -= distance
+
         elif self.keydown == 3:
             if self.power == 1:
                 self.imagey = 3
@@ -119,9 +126,19 @@ class Kirby:
                     self.keydown = 2
                     self.imagey = 2
                     self.imagenum = 5
+                elif event.key == SDLK_RIGHT:
+                    self.frame = 0
+                    self.keydown = 4
+                    self.imagey = 0
+                    self.imagenum = 8
+                elif event.key == SDLK_LEFT:
+                    self.frame = 0
+                    self.keydown = 5
+                    self.imagey = 0
+                    self.imagenum = 8
                 elif event.key == SDLK_SPACE:
                     self.frame = 0
-                    if self.keydown == 1:
+                    if self.keydown == 1 or self.keydown == 4 or self.keydown == 5:
                         self.bulletkey = True
                     elif self.keydown == 2:
                         self.bulletkey = True

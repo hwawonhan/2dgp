@@ -14,9 +14,8 @@ def enter():
     font = load_font('ENCR10B.TTF', 40)
 
 def exit():
-    global image, font
+    global image
     del(image)
-    del(font)
 
 def pause():
     pass
@@ -39,7 +38,7 @@ def handle_events(frame_time):
 def bubble_sort(data):
     for i in range(0, len(data)):
         for j in range(i + 1, len(data)):
-            if data[i]['Time'] < data[j]['Time']:
+            if data[i]['Score'] < data[j]['Score']:
                 data[i], data[j] = data[j], data[i]
 
 def update(frame_time):
@@ -57,8 +56,8 @@ def draw_ranking():
     y = 0
     for score in score_data:
         font.draw(70, 450 - 40 * y,
-                  'Time:%4.1f, X:%3d, Y:%3d' %
-                  (score['Time'], score['X'], score['Y']),
+                  'Score:%3d' %
+                  (score['Score']),
                   (255, 255, 255))
         y += 1
 
