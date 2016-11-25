@@ -11,7 +11,7 @@ font = None
 def enter():
     global image, font
     image = load_image('image//Rank.png')
-    font = load_font('ENCR10B.TTF', 40)
+    font = load_font('ENCR10B.TTF')
 
 def exit():
     global image

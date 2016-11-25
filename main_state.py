@@ -111,7 +111,7 @@ def update():
         kirby.coilsion(monster1[i])
     kirby.coilsion(monster2)
     kirby.coilsion(boss)
-    delay(0.07)
+    delay(0.04)
 
 def draw():
     clear_canvas()
@@ -126,7 +126,8 @@ def draw():
         monster1[i].draw()
     monster2.draw()
     boss.draw()
-    kirby.draw()
+    if boss.getHP() > 0:
+        kirby.draw()
     update_canvas()
 
 

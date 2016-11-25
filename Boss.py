@@ -8,6 +8,8 @@ class Boss:
         self.image = load_image('image//Boss.png')
         self.bulletimage = load_image('image//monsterbullet.png')
         self.hpimage = load_image('image//kirbyhp_.png')
+        self.bossfaceimage = load_image('image//Bossface.png')
+        self.bossclearimage = load_image('image//bossclear.png')
         self.frame = 0
         self.life_time = 0.0
         self.imagey = 0
@@ -103,15 +105,19 @@ class Boss:
 
     def draw_hp(self):
         self.hpimage.clip_draw(0, 0, self.HP, 30, 400 - self.trance, 550)
+        self.bossfaceimage.clip_draw(0, 0, 70, 70, 30, 550)
 
     def draw_bullet(self, bx, by, on):
         if on == False and self.HP >  0:
             self.bulletimage.clip_draw(0, 60, 20, 20, bx, by)
-
+    def getHP(self):
+        return self.HP
     def draw(self):
         if self.apper == True and self.HP > 0:
             self.image.clip_draw(self.frame * 200, 0 + (200 * self.imagey), 200, 200, self.x, self.y)
             self.draw_hp()
+        if self.HP <= 0:
+            self.bossclearimage.clip_draw(0, 0, 800, 600, 400, 300)
         if len(self.bullet) != 0:
             for i, bxy in enumerate(self.bullet):
                 bxy[0] -= 50

@@ -1,5 +1,6 @@
 import game_framework
 import main_state
+import ranking_state
 from pico2d import *
 
 
@@ -9,6 +10,7 @@ imagestart = None
 imagestarty = 0
 imagerank = None
 imageranky = 1
+
 def enter():
     global image, imagestart, imagerank
     image = load_image('image//title_.png')
@@ -36,6 +38,9 @@ def handle_events():
             elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_SPACE):
                 if imagestarty == 0:
                     game_framework.change_state(main_state)
+                if imageranky == 0:
+                    game_framework.change_state(ranking_state)
+
 
 
 
