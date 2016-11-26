@@ -45,7 +45,7 @@ def enter():
     coin3 = Coin3()
     coin4 = Coin4()
     boss = Boss()
-    monster = [Monster() for i in range(1) ]
+    monster = [Monster() for i in range(3) ]
     monster1 = [Monster1(i) for i in range(2)]
     monster2 = Monster2()
     game_framework.reset_time()
@@ -94,7 +94,7 @@ def update():
 
     kirby.update(frame_time)
     sky.update()
-    for i in range(1):
+    for i in range(3):
         monster[i].update(current_time, frame_time, kirby)
     for i in range(2):
         monster1[i].update(current_time,frame_time, kirby)
@@ -105,13 +105,13 @@ def update():
     coin2.update(kirby, current_time)
     coin3.update(kirby, current_time)
     coin4.update(kirby, current_time)
-    for i in range(1):
+    for i in range(3):
         kirby.coilsion(monster[i])
     for i in range(2):
         kirby.coilsion(monster1[i])
     kirby.coilsion(monster2)
     kirby.coilsion(boss)
-    delay(0.04)
+    delay(0.06)
 
 def draw():
     clear_canvas()
@@ -120,7 +120,7 @@ def draw():
     coin2.draw()
     coin3.draw()
     coin4.draw()
-    for i in range(1):
+    for i in range(3):
         monster[i].draw()
     for i in range(2):
         monster1[i].draw()
