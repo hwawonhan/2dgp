@@ -15,7 +15,7 @@ def enter():
     global image, imagestart, imagerank
     image = load_image('image//title_.png')
     imagestart = load_image('image//Start.png')
-    imagerank = load_image('image//Ranking.png')
+    imagerank = load_image('image//Exit.png')
 def exit():
     global image
     del(image)

@@ -44,7 +44,7 @@ class Boss:
                 self.updownkey = 1
         else:
             self.y += 5
-            if self.y > 500:
+            if self.y > 450:
                 self.updownkey = 0
         if self.apper == True:
             self.coilsion(kirby)
