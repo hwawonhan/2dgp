@@ -33,6 +33,7 @@ class Coin4:
                         kirby.score += 10
 
 
+
     def __init__(self):
         self.position = []
         for i in range(8):

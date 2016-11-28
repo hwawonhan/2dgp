@@ -17,6 +17,7 @@ class Coin3:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
 
+
                 if bottom_b < top_a and bottom_b > bottom_a:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
@@ -32,6 +33,7 @@ class Coin3:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
+
 
 
 
