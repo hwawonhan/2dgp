@@ -14,25 +14,27 @@ class Coin2:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
-
+                        kirby.coineat()
 
                 if bottom_b < top_a and bottom_b > bottom_a:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
-
+                        kirby.coineat()
 
             elif right_b < right_a and right_b > left_a:
                 if top_b < top_a and top_b > bottom_a:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
+                        kirby.coineat()
 
 
                 if bottom_b < top_a and bottom_b > bottom_a:
                     if self.position[i][2] == False:
                         self.position[i] = (self.position[i][0], self.position[i][1], True)
                         kirby.score += 10
+                        kirby.coineat()
 
 
 

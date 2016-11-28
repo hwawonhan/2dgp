@@ -10,6 +10,8 @@ class Boss:
         self.hpimage = load_image('image//kirbyhp_.png')
         self.bossfaceimage = load_image('image//Bossface.png')
         self.bossclearimage = load_image('image//bossclear.png')
+        self.Apear_sound = load_wav('image//BossApear.wav')
+        self.Apear_sound.set_volume(50)
         self.frame = 0
         self.life_time = 0.0
         self.imagey = 0
@@ -55,6 +57,7 @@ class Boss:
         if self.apper == False:
             if self.life_time > 40:
                 self.apper = True
+                self.Apear_sound.play(1)
                 print('apper')
 
     def coilsion(self, kirby):

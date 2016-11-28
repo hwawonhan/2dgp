@@ -13,8 +13,10 @@ class Kirby:
     def __init__(self):
         self.x, self.y = 100, 300
         self.font = load_font('ENCR10B.TTF')
-        self.bgm = load_music('image//coineat.mp3')
-        self.bgm.set_volume(50)
+        self.shot_sound = load_wav('image//Shot.wav')
+        self.shot_sound.set_volume(50)
+        self.coineat_sound = load_wav('image//Coin.wav')
+        self.coineat_sound.set_volume(40)
         self.keydown = 0
         self.imagenum = 8
         self.imagey = 0
@@ -72,8 +74,9 @@ class Kirby:
             bulletx = self.x + 20
             bullety = self.y
             self.bullet.append([bulletx, bullety, False])
+            self.shot_sound.play(1)
     def coineat(self):
-        self.bgm.play(1)
+        self.coineat_sound.play(1)
 
     def coilsion(self, monster):
         for i in monster.bullet:
