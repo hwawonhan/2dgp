@@ -39,7 +39,7 @@ class Boss:
         else:
             self.frame = (self.frame + 1) % 4
             if self.frame % 3 == 0 and self.apper == True and self.HP > 0:
-                self.bullet.append([self.x, self.y, False])
+                self.bullet.append([self.x, self.y, False, 0])
         if self.updownkey == 0:
             self.y -= 5
             if self.y < 150:
@@ -110,9 +110,10 @@ class Boss:
         self.hpimage.clip_draw(0, 0, self.HP, 30, 400 - self.trance, 550)
         self.bossfaceimage.clip_draw(0, 0, 70, 70, 30, 550)
 
-    def draw_bullet(self, bx, by, on):
+    def draw_bullet(self, bx, by, on, type):
         if on == False and self.HP > 0:
-            self.bulletimage.clip_draw(0, 60, 20, 20, bx, by)
+            if type == 0:
+                self.bulletimage.clip_draw(0, 60, 20, 20, bx, by)
     def getHP(self):
         return self.HP
     def draw(self):
@@ -125,6 +126,6 @@ class Boss:
             for i, bxy in enumerate(self.bullet):
                 bxy[0] -= 50
                 self.bullet[i][0] = bxy[0]
-                self.draw_bullet(bxy[0], bxy[1], bxy[2])
+                self.draw_bullet(bxy[0], bxy[1], bxy[2], bxy[3])
                 if bxy[0] >= 800:
                     self.bullet.remove(bxy)

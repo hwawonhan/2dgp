@@ -24,6 +24,7 @@ class Monster2:
         self.Anglerate = 0.02
         self.Speedra1te = 0.01
         self.Speedrate = 0.1
+        self.Angle =  0
     def update(self, current_time, frame_time, kirby):
         self.life_time += frame_time
         distance = self.speed * frame_time
@@ -40,6 +41,9 @@ class Monster2:
                     self.bullet.append([self.x, self.y, False, i*30])
         if self.apper == True:
             self.coilsion(kirby)
+            self.Angle += 10
+            self.x += math.cos(self.Angle * 3.141592 / 180) * 10
+            self.y += math.sin(self.Angle * 3.141592 / 180) * 10
         if self.apper == False:
             if self.life_time > 30:
                 self.apper = True

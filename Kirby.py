@@ -29,8 +29,8 @@ class Kirby:
         self.bulletkey = False
         self.hp = 700
         self.trancehp = 0
-        self.image = load_image('image//kirby.png')
-        self.imageki = load_image('image//ki.png')
+        self.image = load_image('./image/kirby.png')
+        self.imageki = load_image('./image/ki.png')
         self.bulletimage = load_image('image//kirbybullet.png')
         self.hpimage = load_image('image//kirbyhp.png')
         self.hpimage_1 = load_image('image//kirbyhp_.png')

@@ -39,6 +39,7 @@ class Monster1:
 
         if self.apper == True:
             self.coilsion(kirby)
+
         if self.apper == False:
             if self.life_time > 20:
                 self.apper = True
