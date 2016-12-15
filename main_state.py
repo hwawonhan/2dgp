@@ -125,7 +125,7 @@ def draw():
     for i in range(2):
         monster1[i].draw()
     monster2.draw()
-    boss.draw()
+    boss.draw(kirby.score)
     if boss.getHP() > 0:
         kirby.draw()
     update_canvas()
