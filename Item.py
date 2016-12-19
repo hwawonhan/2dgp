@@ -5,7 +5,7 @@ import random
 class Monster1:
     def __init__(self, i):
         self.x, self.y = 800, (i+1) * 200
-        self.image = load_image('image//M3.png')
+        self.image = load_image('./image/item.png')
         self.life_time = 0.0
         self.apper = False
         self.speed = 80

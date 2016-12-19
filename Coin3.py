@@ -56,7 +56,7 @@ class Coin3:
                 self.position.append((1600 + (i * 50), 500 - (50 * (i-3)), False))
                 self.position.append((1600 + (i * 50), 100 + (50 * (i-3)), False))
         self.moveX = 0
-        self.image = load_image('image//coin_1.png')
+        self.image = load_image('./image/coin_1.png')
         self.imagex = 0
     def update(self, kirby, current_time):
         self.moveX += 10

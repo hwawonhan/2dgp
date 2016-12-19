@@ -13,10 +13,10 @@ imageranky = 1
 bgm = None
 def enter():
     global image, imagestart, imagerank, bgm
-    image = load_image('image//title_.png')
-    imagestart = load_image('image//Start.png')
-    imagerank = load_image('image//Exit.png')
-    bgm = load_music('image//bgm.mp3')
+    image = load_image('./image/title_.png')
+    imagestart = load_image('./image/Start.png')
+    imagerank = load_image('./image/Exit.png')
+    bgm = load_music('./image/bgm.mp3')
     bgm.set_volume(64)
     bgm.repeat_play()
 def exit():

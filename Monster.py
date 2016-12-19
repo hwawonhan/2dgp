@@ -5,9 +5,9 @@ import random
 class Monster:
     def __init__(self):
         self.x, self.y = 800, random.randint(100, 500)
-        self.image = load_image('image//M10.png')
-        self.bulletimage = load_image('image//monsterbullet.png')
-        self.hpimage = load_image('image//kirbyhp_.png')
+        self.image = load_image('./image/M10.png')
+        self.bulletimage = load_image('./image/monsterbullet.png')
+        self.hpimage = load_image('./image/kirbyhp_.png')
         self.frame = 0
         self.imagey = 0
         self.life_time = 0.0
@@ -63,7 +63,7 @@ class Monster:
             if self.crush == False and i[2] == False and self.HP > 0:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
-                        self.HP -= 10
+                        self.HP -= kirby.damage
                         if self.HP == 0:
                             kirby.score += 100
                         self.trance += 5
@@ -72,7 +72,7 @@ class Monster:
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
-                        self.HP -= 10
+                        self.HP -= kirby.damage
                         if self.HP == 0:
                             kirby.score += 100
                         self.trance += 5
@@ -82,7 +82,7 @@ class Monster:
                         i[2] = True
                 elif right_b < right_a and right_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
-                        self.HP -= 10
+                        self.HP -= kirby.damage
                         if self.HP == 0:
                             kirby.score += 100
                         self.trance += 5
@@ -91,7 +91,7 @@ class Monster:
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
-                        self.HP -= 10
+                        self.HP -= kirby.damage
                         if self.HP == 0:
                             kirby.score += 100
                         self.trance += 5

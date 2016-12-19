@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ceea416e-b331-4c13-8949-18ef8646430a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ppt/Item.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/ppt/Item.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Boss.py" afterPath="$PROJECT_DIR$/Boss.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coin1.py" afterPath="$PROJECT_DIR$/Coin1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coin2.py" afterPath="$PROJECT_DIR$/Coin2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coin3.py" afterPath="$PROJECT_DIR$/Coin3.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Coin4.py" afterPath="$PROJECT_DIR$/Coin4.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Kirby.py" afterPath="$PROJECT_DIR$/Kirby.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster.py" afterPath="$PROJECT_DIR$/Monster.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster1.py" afterPath="$PROJECT_DIR$/Monster1.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster2.py" afterPath="$PROJECT_DIR$/Monster2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sky.py" afterPath="$PROJECT_DIR$/Sky.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_state.py" afterPath="$PROJECT_DIR$/start_state.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/title_state.py" afterPath="$PROJECT_DIR$/title_state.py" />
     </list>
     <ignored path="2015180045.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,90 +35,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Kirby.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Kirby.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Item.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ppt/Item.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Monster1.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Monster1.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="25" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Monster2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Monster2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="title_state.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/title_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_state.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2664">
-              <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Sky.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sky.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="168">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ranking_state.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ranking_state.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,9 +48,31 @@
       <file leaf-file-name="Boss.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Boss.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+            <state relative-caret-position="240">
+              <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Monster.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Monster.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Item.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Item.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,11 +80,61 @@
       <file leaf-file-name="Mygame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Mygame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+            <state relative-caret-position="72">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin1.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Coin1.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Coin2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Coin3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coin4.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Coin4.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start_state.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/start_state.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-40">
+              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -149,7 +155,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/MyGame.py" />
-        <option value="$PROJECT_DIR$/start_state.py" />
         <option value="$PROJECT_DIR$/Cointype1.py" />
         <option value="$PROJECT_DIR$/Cointype2.py" />
         <option value="$PROJECT_DIR$/Cointype3.py" />
@@ -159,21 +164,23 @@
         <option value="$PROJECT_DIR$/CKirby.py" />
         <option value="$PROJECT_DIR$/game_framework.py" />
         <option value="$PROJECT_DIR$/data_file.txt" />
-        <option value="$PROJECT_DIR$/Monster.py" />
         <option value="$PROJECT_DIR$/ranking_state.py" />
-        <option value="$PROJECT_DIR$/Sky.py" />
+        <option value="$PROJECT_DIR$/Mygame.py" />
+        <option value="$PROJECT_DIR$/main_state.py" />
+        <option value="$PROJECT_DIR$/ppt/Item.py" />
+        <option value="$PROJECT_DIR$/Kirby.py" />
+        <option value="$PROJECT_DIR$/Monster1.py" />
+        <option value="$PROJECT_DIR$/Monster2.py" />
         <option value="$PROJECT_DIR$/title_state.py" />
+        <option value="$PROJECT_DIR$/Sky.py" />
+        <option value="$PROJECT_DIR$/Boss.py" />
+        <option value="$PROJECT_DIR$/Monster.py" />
+        <option value="$PROJECT_DIR$/Item.py" />
         <option value="$PROJECT_DIR$/Coin1.py" />
         <option value="$PROJECT_DIR$/Coin2.py" />
         <option value="$PROJECT_DIR$/Coin3.py" />
         <option value="$PROJECT_DIR$/Coin4.py" />
-        <option value="$PROJECT_DIR$/Monster1.py" />
-        <option value="$PROJECT_DIR$/Monster2.py" />
-        <option value="$PROJECT_DIR$/Mygame.py" />
-        <option value="$PROJECT_DIR$/Kirby.py" />
-        <option value="$PROJECT_DIR$/main_state.py" />
-        <option value="$PROJECT_DIR$/Boss.py" />
-        <option value="$PROJECT_DIR$/ppt/Item.py" />
+        <option value="$PROJECT_DIR$/start_state.py" />
       </list>
     </option>
   </component>
@@ -427,7 +434,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21816283" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -486,13 +493,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/game_framework.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1152">
-          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/start_state.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -650,13 +650,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/start_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/2015180045.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -716,72 +709,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ppt/Item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kirby.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="47" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/title_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        <state relative-caret-position="360">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Coin3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Coin2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Coin1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="34" column="39" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Coin4.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="22" column="27" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monster2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="46" column="31" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Mygame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2664">
+        <state relative-caret-position="3048">
           <caret line="127" column="25" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -791,42 +765,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Sky.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+        <state relative-caret-position="168">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Boss.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="115" column="25" selection-start-line="115" selection-start-column="25" selection-end-line="115" selection-end-column="25" />
+        <state relative-caret-position="240">
+          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kirby.py">
+    <entry file="file://$PROJECT_DIR$/Monster.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="189" column="37" selection-start-line="189" selection-start-column="37" selection-end-line="189" selection-end-column="37" />
+        <state relative-caret-position="168">
+          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monster1.py">
+    <entry file="file://$PROJECT_DIR$/Mygame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="25" column="28" selection-start-line="0" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state relative-caret-position="72">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Coin1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="46" column="41" selection-start-line="46" selection-start-column="41" selection-end-line="46" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ppt/Item.py">
+    <entry file="file://$PROJECT_DIR$/Coin2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Coin3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="58" column="41" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Coin4.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="56" column="41" selection-start-line="56" selection-start-column="41" selection-end-line="56" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/start_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-40">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>

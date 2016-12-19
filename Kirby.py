@@ -32,16 +32,21 @@ class Kirby:
         self.image = load_image('./image/kirby.png')
         self.imageki = load_image('./image/ki.png')
         self.bulletimage = load_image('image//kirbybullet.png')
-        self.hpimage = load_image('image//kirbyhp.png')
-        self.hpimage_1 = load_image('image//kirbyhp_.png')
-        self.gameoverimage = load_image('image//gameover.png')
+        self.hpimage = load_image('./image/kirbyhp.png')
+        self.hpimage_1 = load_image('./image/kirbyhp_.png')
+        self.gameoverimage = load_image('./image/gameover.png')
         self.bulletframe = 0
         self.bulletimagey = 0
+        self.damage = 10
         self.score = 0
     def update(self, frame_time):
         self.life_time += frame_time
         distance = self.Speed_PPS * frame_time
         self.frame = (self.frame + 1) % self.imagenum
+        if self.bulletimagey == 0:
+            self.damage = 10
+        else:
+            self.damage = 15
         if self.keydown == 1:
             if self.y <= 500:
                 self.y += distance

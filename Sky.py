@@ -3,9 +3,9 @@ from pico2d import *
 
 class Sky:
     def __init__(self):
-        self.image = load_image('image//bg.png')
-        self.image2 = load_image('image//bg_1.png')
-        self.bgm = load_wav('image//Melodie.wav')
+        self.image = load_image('./image/bg.png')
+        self.image2 = load_image('./image/bg_1.png')
+        self.bgm = load_wav('./image/Melodie.wav')
         self.bgm.set_volume(64)
         self.bgm.repeat_play()
         self.x, self.y = 400, 300
