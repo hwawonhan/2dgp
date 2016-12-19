@@ -13,9 +13,9 @@ class Kirby:
     def __init__(self):
         self.x, self.y = 100, 300
         self.font = load_font('ENCR10B.TTF')
-        self.shot_sound = load_wav('image//Shot.wav')
+        self.shot_sound = load_wav('./image/Shot.wav')
         self.shot_sound.set_volume(50)
-        self.coineat_sound = load_wav('image//Coin.wav')
+        self.coineat_sound = load_wav('./image/Coin.wav')
         self.coineat_sound.set_volume(40)
         self.keydown = 0
         self.imagenum = 8
