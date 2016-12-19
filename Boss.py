@@ -70,18 +70,18 @@ class Boss:
                 if left_b < right_a and left_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= kirby.damage
-                        if self.HP == 0:
+                        if self.HP <= 0:
                             kirby.score += 1000
-                        self.trance += 5
+                        self.trance += kirby.damage//2
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= kirby.damage
-                        if self.HP == 0:
+                        if self.HP <= 0:
                             kirby.score += 1000
-                        self.trance += 5
+                        self.trance += kirby.damage//2
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
@@ -89,18 +89,18 @@ class Boss:
                 elif right_b < right_a and right_b > left_a:
                     if top_b < top_a and top_b > bottom_a:
                         self.HP -= kirby.damage
-                        if self.HP == 0:
+                        if self.HP <= 0:
                             kirby.score += 1000
-                        self.trance += 5
+                        self.trance += kirby.damage//2
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
                         i[2] = True
                     if bottom_b < top_a and bottom_b > bottom_a:
                         self.HP -= kirby.damage
-                        if self.HP == 0:
+                        if self.HP <= 0:
                             kirby.score += 1000
-                        self.trance += 5
+                        self.trance += kirby.damage//2
                         self.crush = True
                         self.imagey = 1
                         self.imageframe = 1
