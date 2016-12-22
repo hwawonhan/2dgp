@@ -18,6 +18,7 @@ class Monster:
         self.trance = 0
         self.speed = 80
         self.bullet = []
+        self.imboss = False
         self.shoutAngle = 0
         self.shoutAngleRate = 20
         self.shoutSpeed = 1

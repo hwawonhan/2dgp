@@ -18,6 +18,7 @@ class Monster2:
         self.HP = 100
         self.bullet = []
         self.bulletframe = 0
+        self.imboss = False
         self.shoutAngle = 0
         self.shoutAngleRate = 20
         self.shoutSpeed = 1

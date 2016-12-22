@@ -19,6 +19,7 @@ class Monster1:
         self.bullet = []
         self.bulletimage = load_image('./image/monsterbullet.png')
         self.shoutAngle = 0
+        self.imboss = False
         self.shoutAngleRate = 20
         self.shoutSpeed = 1
         self.Anglerate = 0.02

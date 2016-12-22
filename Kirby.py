@@ -119,6 +119,79 @@ class Kirby:
                         self.hp -= 10
                         self.trancehp += 5
                         i[2] = True
+        if monster.imboss == True:
+            for i in monster.bullettype2:
+                left_a, right_a, top_a, bottom_a = self.x - 25, self.x + 25, self.y + 25, self.y - 25
+                left_b, right_b, top_b, bottom_b = i[0] - 10, i[0] + 10, i[1] - 10, i[1] + 10
+
+                if i[2] == False and monster.HP > 0:
+                    if left_b < right_a and left_b > left_a:
+                        if top_b < top_a and top_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                        if bottom_b < top_a and bottom_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                    elif right_b < right_a and right_b > left_a:
+                        if top_b < top_a and top_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                        if bottom_b < top_a and bottom_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+            for i in monster.bullettype3:
+                left_a, right_a, top_a,  bottom_a = self.x - 25, self.x + 25, self.y + 25, self.y - 25
+                left_b, right_b, top_b, bottom_b = i[0] - 10, i[0] + 10, i[1] - 10, i[1] + 10
+
+                if i[2] == False and monster.HP > 0:
+                    if left_b < right_a and left_b > left_a:
+                        if top_b < top_a and top_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                        if bottom_b < top_a and bottom_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                    elif right_b < right_a and right_b > left_a:
+                        if top_b < top_a and top_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+                        if bottom_b < top_a and bottom_b > bottom_a:
+                            self.imagey = 5
+                            self.imagenum = 5
+                            self.imageframe = 1
+                            self.hp -= 10
+                            self.trancehp += 5
+                            i[2] = True
+
+
 
 
 

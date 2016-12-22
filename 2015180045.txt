@@ -1,3 +1,26 @@
+Mon Dec 19 18:19:47 2016 +0900 update
+Mon Dec 19 16:59:31 2016 +0900 item
+Mon Dec 19 16:01:11 2016 +0900 damage
+Sun Dec 18 20:07:29 2016 +0900 item image
+Fri Dec 16 02:05:29 2016 +0900 boss clear score
+Wed Dec 7 13:09:05 2016 +0900 sdl
+Mon Nov 28 22:25:17 2016 +0900 sound update
+Mon Nov 28 21:57:09 2016 +0900 bgm
+Sun Nov 27 23:18:49 2016 +0900 Boss moving
+Sat Nov 26 20:20:28 2016 +0900 monster1 2more
+Sat Nov 26 00:40:01 2016 +0900 boss update
+Thu Nov 24 22:23:26 2016 +0900 title start update
+Wed Nov 23 22:34:32 2016 +0900 monster3 bullet type
+Wed Nov 23 22:02:34 2016 +0900 cloud monster bullet type
+Tue Nov 22 16:41:14 2016 +0900 coin coilsion update
+Mon Nov 21 20:08:11 2016 +0900 score +
+Mon Nov 21 19:01:38 2016 +0900 boss bullet & kirby Hp next image
+Sun Nov 20 20:19:18 2016 +0900 score update
+Sun Nov 20 20:06:37 2016 +0900 current time reset
+Sat Nov 19 14:06:49 2016 +0900 Boss coming
+Sat Nov 19 13:55:08 2016 +0900 Boss image
+Sat Nov 19 13:39:25 2016 +0900 monster3 bullet
+Thu Nov 17 23:19:46 2016 +0900 monster2 bullet
 Tue Nov 15 18:48:47 2016 +0900 3last
 Tue Nov 15 16:58:15 2016 +0900 hpbar
 Tue Nov 15 16:18:26 2016 +0900 update

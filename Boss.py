@@ -22,13 +22,10 @@ class Boss:
         self.HP = 700
         self.trance = 0
         self.speed = 80
+        self.imboss = True
         self.bullet = []
-        self.shoutAngle = 0
-        self.shoutAngleRate = 20
-        self.shoutSpeed = 1
-        self.Anglerate = 0.02
-        self.Speedra1te = 0.01
-        self.Speedrate = 0.1
+        self.bullettype2 = []
+        self.bullettype3 = []
     def update(self, current_time, frame_time, kirby):
         self.life_time += frame_time
         distance = self.speed * frame_time
@@ -41,6 +38,11 @@ class Boss:
             self.frame = (self.frame + 1) % 4
             if self.frame % 3 == 0 and self.apper == True and self.HP > 0:
                 self.bullet.append([self.x, self.y, False, 0])
+            if self.frame % 3 == 1 and self.apper == True and self.HP > 0:
+                self.bullettype2.append([self.x, self.y, False, 30, 5])
+            if self.frame % 3 == 2 and self.apper == True and self.HP > 0:
+                for i in range(12):
+                    self.bullettype3.append([self.x, self.y, False, i*30])
         if self.updownkey == 0:
             self.y -= 5
             if self.y < 150:
@@ -115,6 +117,15 @@ class Boss:
         if on == False and self.HP > 0:
             if type == 0:
                 self.bulletimage.clip_draw(0, 60, 20, 20, bx, by)
+
+    def draw_bullettype2(self, bx, by, on):
+        if on == False and self.HP > 0:
+            self.bulletimage.clip_draw(0, 20, 20, 20, bx, by)
+
+    def draw_bullettype3(self, bx, by, on):
+        if on == False and self.HP > 0:
+            self.bulletimage.clip_draw(20, 40, 20, 20, bx, by)
+
     def getHP(self):
         return self.HP
     def draw(self, score):
@@ -131,3 +142,25 @@ class Boss:
                 self.draw_bullet(bxy[0], bxy[1], bxy[2], bxy[3])
                 if bxy[0] >= 800:
                     self.bullet.remove(bxy)
+
+        if len(self.bullettype2) != 0:
+            for i, bxy in enumerate(self.bullettype2):
+                bxy[3] += 10
+                if bxy[4] < 10:
+                    bxy[4] += 1
+                bxy[0] -= math.cos(bxy[3]*math.pi/180) * bxy[4]
+                bxy[0] -= 10
+                bxy[1] -= math.sin(bxy[3]*math.pi/180) * bxy[4]
+                self.bullettype2[i][0] = bxy[0]
+                self.draw_bullettype2(bxy[0], bxy[1], bxy[2])
+                if bxy[0] >= 800:
+                    self.bullettype2.remove(bxy)
+
+        if len(self.bullettype3) != 0:
+            for i, bxy in enumerate(self.bullettype3):
+                bxy[0] -= math.cos(bxy[3] * 3.141592 / 180) * 20
+                bxy[1] -= math.sin(bxy[3] * 3.141592 / 180) * 20
+                self.bullettype3[i][0] = bxy[0]
+                self.draw_bullettype3(bxy[0], bxy[1], bxy[2])
+                if bxy[0] >= 800:
+                    self.bullettype3.remove(bxy)
