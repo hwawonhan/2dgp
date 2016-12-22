@@ -58,7 +58,7 @@ class Boss:
 
 
         if self.apper == False:
-            if self.life_time > 40:
+            if self.life_time > 45:
                 self.apper = True
                 self.Apear_sound.play(1)
                 print('apper')

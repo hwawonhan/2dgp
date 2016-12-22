@@ -87,8 +87,7 @@ def handle_events():
         elif (event.type, event.key) == (SDL_KEYDOWN, SDLK_q):
             game_framework.change_state(ranking_state)
         else:
-            if kirby.hp > 0:
-                kirby.handle_event(event)
+            kirby.handle_event(event)
 
 
 def update():
